@@ -1,0 +1,942 @@
+/* Font Imports */
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('font/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #000000;
+    line-height: normal;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Ellipses container to prevent page height expansion */
+.ellipses-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 60px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.location-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+}
+
+.header-cta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.header-cta p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+}
+
+/* Hero Section */
+.hero {
+    padding: 148px 0;
+    width: 100%;
+}
+
+.hero-content {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.hero-image {
+    width: 200px;
+    height: 233px;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid #000000;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+    color: #000000;
+    line-height: normal;
+}
+
+.hero-description {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+    width: 656px;
+    line-height: normal;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* About Section */
+.about {
+    padding: 148px 0;
+    width: 100%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+    color: #000000;
+    line-height: normal;
+}
+
+.about-linkedin {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.about-linkedin p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+}
+
+.resume-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.section-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+    line-height: normal;
+}
+
+.resume-buttons {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+}
+
+.resume-buttons-single {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.projects-grid {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+}
+
+.project-thumbnail {
+    background-color: #ffb1b1;
+    height: 249px;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #000000;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.project-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+    line-height: normal;
+}
+
+/* Contact Section */
+.contact {
+    padding: 196px 0;
+    width: 100%;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.contact-section,
+.social-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.contact-buttons,
+.social-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+}
+
+.footer p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+}
+
+.footer-link {
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-position: from-font;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    line-height: normal;
+    text-align: center;
+}
+
+.btn-linkedin {
+    background-color: #0a66c2;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-linkedin:hover,
+.btn-linkedin:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+.btn-about {
+    background-color: #badbf9;
+    color: #000000;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-about:hover,
+.btn-about:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+.btn-contact {
+    background-color: #baf9ee;
+    color: #000000;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-contact:hover,
+.btn-contact:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+.btn-view {
+    background-color: #badbf9;
+    color: #000000;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    width: 100%;
+    transition: opacity 0.2s ease;
+}
+
+.btn-view:hover,
+.btn-view:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+.btn-contact-linkedin {
+    background-color: #0a66c2;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 24px;
+    border-radius: 24px;
+    flex: 1;
+    height: 84px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-contact-linkedin:hover,
+.btn-contact-linkedin:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+.btn-contact-email {
+    background-color: #baf9ee;
+    color: #000000;
+    font-weight: 400;
+    font-size: 24px;
+    padding: 24px;
+    border-radius: 24px;
+    flex: 1;
+    height: 84px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-contact-email:hover,
+.btn-contact-email:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+.btn-github {
+    background-color: #1b1f23;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 24px;
+    border-radius: 24px;
+    flex: 1;
+    height: 84px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-github:hover,
+.btn-github:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+.btn-upwork {
+    background-color: #00ab00;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 24px;
+    border-radius: 24px;
+    flex: 1;
+    height: 84px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-upwork:hover,
+.btn-upwork:focus-visible {
+    opacity: 0.8;
+    outline: none;
+}
+
+/* Scroll Down Animation - from instructions.txt */
+.scrolldown {
+    --color: white;
+    --sizeX: 30px;
+    --sizeY: 50px;
+    position: relative;
+    width: var(--sizeX);
+    height: var(--sizeY);
+    margin-left: calc(var(--sizeX) / 2);
+    border: calc(var(--sizeX) / 10) solid var(--color);
+    border-radius: 50px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+.scrolldown::before {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: var(--color);
+    border-radius: 100%;
+    animation: scrolldown-anim 2s infinite;
+    box-sizing: border-box;
+    box-shadow: 0px -5px 3px 1px #4b4b4b66;
+}
+
+@keyframes scrolldown-anim {
+    0% {
+        opacity: 0;
+        height: 6px;
+    }
+
+    40% {
+        opacity: 1;
+        height: 10px;
+    }
+
+    80% {
+        transform: translate(0, 20px);
+        height: 10px;
+        opacity: 0;
+    }
+
+    100% {
+        height: 3px;
+        opacity: 0;
+    }
+}
+
+.chevrons {
+    padding: 6px 0 0 0;
+    margin-left: -3px;
+    margin-top: 48px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chevrondown {
+    margin-top: -6px;
+    position: relative;
+    border: solid var(--color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+}
+
+.chevrondown:nth-child(odd) {
+    animation: pulse54012 500ms ease infinite alternate;
+}
+
+.chevrondown:nth-child(even) {
+    animation: pulse54012 500ms ease infinite alternate 250ms;
+}
+
+@keyframes pulse54012 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+
+/* Fold Up Button - from instructions.txt */
+.btn-resume {
+    position: relative;
+    font-size: 1.2em;
+    padding: 0.7em 1.4em;
+    background-color: #BF0426;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5em;
+    color: #DEDEDE;
+    box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    font-size: 24px;
+    padding: 24px;
+    border-radius: 24px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-resume::before {
+    position: absolute;
+    content: '';
+    height: 1.4em;
+    width: 1.4em;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #f4f4f4 0%, #f4f4f4  50%, rgba(150,4,31,1) 50%, rgba(191,4,38,1) 60%);
+    border-radius: 0 0 0.5em 0;
+    box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.btn-resume:hover::before,
+.btn-resume:focus-visible::before {
+    width: 2em;
+    height: 2em;
+}
+
+.btn-resume:hover,
+.btn-resume:focus-visible {
+    outline: none;
+}
+
+.btn-resume b {
+    font-weight: 600;
+}
+
+/* Background Ellipses */
+.ellipse {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Blue ellipses - using blur + box-shadow with spread */
+.ellipse-1 {
+    left: -61px;
+    top: -59px;
+    width: 316px;
+    height: 316px;
+    background: radial-gradient(circle, #BADBF9 0%, #BADBF9 40%, rgba(186, 219, 249, 0.6) 60%, rgba(186, 219, 249, 0) 100%);
+    filter: blur(20px);
+    box-shadow: 0 0 40px 20px rgba(186, 219, 249, 0.4);
+}
+
+.ellipse-2 {
+    right: 0;
+    top: 626px;
+    width: 316px;
+    height: 316px;
+    background: radial-gradient(circle, #BBF9EE 0%, #BBF9EE 40%, rgba(187, 249, 238, 0.6) 60%, rgba(187, 249, 238, 0) 100%);
+    filter: blur(20px);
+    box-shadow: 0 0 40px 20px rgba(187, 249, 238, 0.4);
+}
+
+.ellipse-5 {
+    right: 0;
+    top: 1915px;
+    width: 246px;
+    height: 246px;
+    background: radial-gradient(circle, #BADBF9 0%, #BADBF9 40%, rgba(186, 219, 249, 0.6) 60%, rgba(186, 219, 249, 0) 100%);
+    filter: blur(20px);
+    box-shadow: 0 0 40px 20px rgba(186, 219, 249, 0.4);
+}
+
+/* Green ellipses - using blur + box-shadow with spread */
+.ellipse-3 {
+    left: -25px;
+    top: 965px;
+    width: 235px;
+    height: 235px;
+    background: radial-gradient(circle, #BADBF9 0%, #BADBF9 40%, rgba(186, 219, 249, 0.6) 60%, rgba(186, 219, 249, 0) 100%);
+    filter: blur(20px);
+    box-shadow: 0 0 40px 20px rgba(186, 219, 249, 0.4);
+}
+
+.ellipse-4 {
+    left: -95px;
+    top: 2176px;
+    width: 322px;
+    height: 322px;
+    background: radial-gradient(circle, #BBF9EE 0%, #BBF9EE 40%, rgba(187, 249, 238, 0.6) 60%, rgba(187, 249, 238, 0) 100%);
+    filter: blur(20px);
+    box-shadow: 0 0 40px 20px rgba(187, 249, 238, 0.4);
+}
+
+.ellipse-6 {
+    right: 0;
+    bottom: -135px;
+    width: 235px;
+    height: 235px;
+    background: radial-gradient(circle, #BBF9EE 0%, #BBF9EE 40%, rgba(187, 249, 238, 0.6) 60%, rgba(187, 249, 238, 0) 100%);
+    filter: blur(20px);
+    box-shadow: 0 0 40px 20px rgba(187, 249, 238, 0.4);
+}
+
+/* Responsive Design */
+@media (min-width: 1401px) {
+    .container {
+        padding: 32px 60px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .container {
+        padding: 32px 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 24px 40px;
+    }
+
+    .hero {
+        padding: 100px 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .hero-text {
+        gap: 24px;
+    }
+
+    .hero-description {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        gap: 16px;
+    }
+
+    .about {
+        padding: 100px 0;
+    }
+
+    .about-content {
+        gap: 24px;
+    }
+
+    .about-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .resume-section {
+        gap: 12px;
+    }
+
+    .projects-section {
+        gap: 12px;
+    }
+
+    .projects-grid {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .project-card {
+        gap: 12px;
+    }
+
+    .contact {
+        padding: 120px 0;
+    }
+
+    .contact-content {
+        gap: 24px;
+    }
+
+    .contact-section,
+    .social-section {
+        gap: 12px;
+    }
+
+    .contact-buttons,
+    .social-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-contact-linkedin,
+    .btn-contact-email,
+    .btn-github,
+    .btn-upwork {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 16px;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .location-text,
+    .header-cta {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 0 60px 0;
+    }
+
+    .hero-content {
+        gap: 20px;
+    }
+
+    .hero-text {
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .hero-description {
+        font-size: 20px;
+    }
+
+    .hero-buttons {
+        gap: 12px;
+    }
+
+    .btn-about,
+    .btn-contact {
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+
+    .about {
+        padding: 60px 0;
+    }
+
+    .about-content {
+        gap: 20px;
+    }
+
+    .about-header {
+        gap: 10px;
+    }
+
+    .about-linkedin {
+        display: none;
+    }
+
+    .resume-section {
+        gap: 10px;
+    }
+
+    .section-subtitle {
+        font-size: 20px;
+    }
+
+    .resume-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .resume-buttons-single {
+        margin-top: 12px;
+    }
+
+    .btn-resume {
+        width: 100%;
+        padding: 18px;
+        font-size: 20px;
+    }
+
+    .btn-resume::before {
+        width: 1em;
+        height: 1em;
+    }
+
+    .btn-resume:hover::before,
+    .btn-resume:focus-visible::before {
+        width: 1.4em;
+        height: 1.4em;
+    }
+
+    .ellipse-3 {
+        display: none;
+    }
+
+    .projects-section {
+        gap: 10px;
+    }
+
+    .projects-grid {
+        gap: 20px;
+    }
+
+    .project-card {
+        gap: 10px;
+    }
+
+    .project-title {
+        font-size: 20px;
+    }
+
+    .btn-view {
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+
+    .contact {
+        padding: 120px 0;
+    }
+
+    .contact-content {
+        gap: 20px;
+    }
+
+    .contact-section,
+    .social-section {
+        gap: 10px;
+    }
+
+    .contact-buttons,
+    .social-buttons {
+        gap: 10px;
+    }
+
+    .btn-contact-linkedin,
+    .btn-contact-email,
+    .btn-github,
+    .btn-upwork {
+        padding: 18px;
+        font-size: 20px;
+    }
+
+    .btn-contact-email {
+        font-size: 0;
+    }
+
+    .btn-contact-email::before {
+        content: 'Email';
+        font-size: 20px;
+    }
+
+    .footer {
+        padding: 24px 0;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+}
