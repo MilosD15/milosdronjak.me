@@ -3,167 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miloš Dronjak - UX Engineer & Web Developer</title>
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="img/favicon.png">
+    <title>Miloš Dronjak — Shopify dev &amp; automation specialist</title>
+    <meta name="description" content="I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.">
+    <link rel="canonical" href="https://milosdronjak.me/">
+    <link rel="icon" href="img/my-pic-newest.jpeg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="img/my-pic-newest.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://milosdronjak.me/">
+    <meta property="og:title" content="Miloš Dronjak — Shopify dev &amp; automation specialist">
+    <meta property="og:description" content="I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.">
+    <meta property="og:image" content="https://milosdronjak.me/img/my-pic-newest.jpeg">
+    <meta property="og:image:width" content="960">
+    <meta property="og:image:height" content="960">
+    <meta property="og:image:alt" content="Miloš Dronjak">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miloš Dronjak — Shopify dev &amp; automation specialist">
+    <meta name="twitter:description" content="I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.">
+    <meta name="twitter:image" content="https://milosdronjak.me/img/my-pic-newest.jpeg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Background decorative ellipses -->
-    <div class="ellipses-container">
-        <div class="ellipse ellipse-1"></div>
-        <div class="ellipse ellipse-2"></div>
-        <div class="ellipse ellipse-3"></div>
-        <div class="ellipse ellipse-4"></div>
-        <div class="ellipse ellipse-5"></div>
-        <div class="ellipse ellipse-6"></div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="variant-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <p class="location-text">📍Based in Rotterdam (remote work preferred)</p>
-            <div class="header-cta">
-                <p>Say hi on</p>
-                <a href="https://www.linkedin.com/in/mdwebdev/" class="btn btn-linkedin" target="_blank">
-                    LinkedIn
-                </a>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <button type="button" class="site-header__menu-btn" aria-expanded="false" aria-controls="site-nav-primary" aria-label="Open menu">
+                <img class="site-header__menu-icon" src="img/burger%20icon.svg" alt="" width="26" height="26" decoding="async">
+            </button>
+            <nav id="site-nav-primary" class="site-nav" aria-label="Primary">
+                <a href="/my-philosophy">/my-philosophy</a>
+                <a href="/case">/case</a>
+                <a class="btn btn--contact-nav site-nav__contact-drawer" href="#contact">Contact</a>
+            </nav>
+            <div class="site-header__meta">
+                <span class="status-pill" title="Queue status">Backlog · 0 tickets</span>
+                <a class="btn btn--audit" href="mailto:hello@milosdronjak.me?subject=Backlog%20audit">Book audit</a>
+                <a class="btn btn--contact-nav site-header__contact-bar" href="#contact">Contact</a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="img/milosdronjak-photo.png" alt="Miloš Dronjak">
-                </div>
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        I'm Miloš Dronjak,<br>
-                        UX Engineer & Web Developer.
-                    </h1>
-                    <p class="hero-description">
-                        Web design?<br>
-                        Web development?<br>
-                        AI integrations & automations?<br>
-                        <br>
-                        Yes - thoughtfully researched, designed and built.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn btn-about">About me</a>
-                        <a href="#contact" class="btn btn-contact">Contact me</a>
+    <main id="main">
+        <section class="pdp" aria-labelledby="product-headline">
+            <div class="pdp__grid" id="pdp-chain">
+                <div class="pdp__gallery reveal reveal--up" data-reveal-chain>
+                    <div class="gallery-main" id="gallery-main" data-view="portrait">
+                        <img class="gallery-main__img" src="img/my-pic-newest.jpeg" alt="Miloš Dronjak" width="960" height="960" decoding="async">
                     </div>
-                    <a href="#about" class="scrolldown" style="--color: hsl(0, 0%, 45%);">
-                        <div class="chevrons">
-                            <div class="chevrondown"></div>
-                            <div class="chevrondown"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="about">
-            <div class="about-content">
-                <div class="about-header">
-                    <h2 class="section-title">About me & my work</h2>
-                    <div class="about-linkedin">
-                        <p>Read more on</p>
-                        <a href="https://www.linkedin.com/in/mdwebdev/" class="btn btn-linkedin" target="_blank">
-                            LinkedIn
-                        </a>
+                    <div class="gallery-meta">
+                        <span class="gallery-meta__label">Pages</span>
                     </div>
+                    <nav class="gallery-thumbs" aria-label="Site pages">
+                        <a class="gallery-thumb" href="/my-philosophy">My philosophy</a>
+                        <a class="gallery-thumb" href="/case">Case</a>
+                        <a class="gallery-thumb" href="/contact">Contact</a>
+                    </nav>
                 </div>
 
-                <div class="resume-section">
-                    <p class="section-subtitle">Everything you need to know</p>
-                    <div class="resume-buttons">
-                        <a href="PDFs/Milos Dronjak - Web Developer resume.pdf" class="btn btn-resume" target="_blank">
-                            <b>Web Developer resume</b>
-                        </a>
-                        <a href="PDFs/Milos Dronjak - UX Engineer resume.pdf" class="btn btn-resume" target="_blank">
-                            <b>UX Engineer resume</b>
-                        </a>
+                <div class="pdp__detail">
+                    <div class="product-tags reveal reveal--up" data-reveal-chain>
+                        <span class="product-tags__lead">Shopify dev &amp; automation specialist ·</span>
+                        <span class="product-tags__avail"><span class="live-dot live-dot--avail" aria-hidden="true"></span>Available Now</span>
                     </div>
-                    <div class="resume-buttons-single">
-                        <a href="PDFs/Milos Dronjak - UX Design portfolio.pdf" class="btn btn-resume" target="_blank">
-                            <b>UX Engineer portfolio</b>
-                        </a>
+                    <div class="product-headline-wrap reveal reveal--up" data-reveal-chain>
+                        <h1 class="product-title" id="product-headline">The only Shopify dev whose first day isn&apos;t your first problem.</h1>
                     </div>
-                </div>
+                    <div id="variant-copy-hero" class="variant-copy variant-copy--hero reveal reveal--up" data-reveal-chain>
+                        <p class="product-lede" id="product-subhead">I clear the automations your seniors keep leaving behind — Zapier, Make, Shopify Flow, and custom code when the no-code options run out.</p>
+                    </div>
 
-                <div class="projects-section">
-                    <p class="section-subtitle">Some websites that I built</p>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                                <img src="img/wonderfuldental-thumbnail.png" alt="Wonderful Dental">
-                            </div>
-                            <h3 class="project-title">Wonderful Dental</h3>
-                            <a href="https://wonderfuldental.com/" class="btn btn-view" target="_blank">View</a>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                                <img src="img/mkbdigiwerkplaats-thumbnail.png" alt="MKB Digiwerkplaats">
-                            </div>
-                            <h3 class="project-title">MKB Digiwerkplaats</h3>
-                            <a href="https://mkbdigiwerkplaats.nl/" class="btn btn-view" target="_blank">View</a>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                                <img src="img/codebrush-thumbnail.png" alt="CodeBrush">
-                            </div>
-                            <h3 class="project-title">CodeBrush</h3>
-                            <a href="https://codebrush.netlify.app/" class="btn btn-view" target="_blank">View</a>
+                    <div class="variant-block reveal reveal--up" data-reveal-chain>
+                        <p class="variant-label">Focus</p>
+                        <div class="pill-row" role="group" aria-label="Focus">
+                            <button type="button" class="pill" data-focus-btn data-value="automations" aria-pressed="true">Automations</button>
+                            <button type="button" class="pill" data-focus-btn data-value="storefront" aria-pressed="false">Storefront</button>
+                            <button type="button" class="pill" data-focus-btn data-value="both" aria-pressed="false">Both</button>
                         </div>
                     </div>
-                </div>
 
-                <a href="#contact" class="scrolldown" style="--color: hsl(0, 0%, 45%);">
-                    <div class="chevrons">
-                        <div class="chevrondown"></div>
-                        <div class="chevrondown"></div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="contact-content">
-                <h2 class="section-title">Contact me</h2>
-                <div class="contact-section">
-                    <p class="section-subtitle">Get in touch</p>
-                    <div class="contact-buttons">
-                        <a href="https://www.linkedin.com/in/mdwebdev/" class="btn btn-contact-linkedin" target="_blank">
-                            LinkedIn
+                    <div class="cta-row reveal reveal--up" data-reveal-chain>
+                        <a class="btn btn--primary" href="mailto:hello@milosdronjak.me?subject=Backlog%20audit">
+                            <span class="btn--primary__left">+ Book a backlog audit</span>
+                            <span class="btn--primary__right">Reply within 24 hours</span>
                         </a>
-                        <a href="mailto:milosdronjak47@gmail.com" class="btn btn-contact-email">
-                            Email (milosdronjak47@gmail.com)
-                        </a>
-                    </div>
-                </div>
-                <div class="social-section">
-                    <p class="section-subtitle">Find me elsewhere</p>
-                    <div class="social-buttons">
-                        <a href="https://github.com/milosD15" class="btn btn-github" target="_blank">
-                            GitHub
-                        </a>
-                        <a href="https://www.upwork.com/freelancers/~016c2ec76f60c85c55" class="btn btn-upwork" target="_blank">
-                            Upwork
-                        </a>
+                        <a class="btn btn--ghost" href="/case">Read the Wonderful Dental story</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© Copyright 2026 | <a href="#" class="footer-link">milosdronjak.me</a></p>
-        </footer>
-    </div>
+        <section class="description-block" id="automations" aria-labelledby="desc-heading">
+            <div class="description-block__grid">
+                <p class="section-kicker reveal reveal--up" id="desc-heading" data-reveal-scroll>Description</p>
+                <div class="description-block__body reveal reveal--up" data-reveal-scroll>
+                    <div id="variant-copy-desc" class="variant-copy variant-copy--desc">
+                        <p id="desc-variant">Every Shopify agency has the same quiet backlog. Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for — and I make it work the way it was supposed to.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="reviews" aria-labelledby="reviews-heading">
+            <div class="reviews__head reveal reveal--up" data-reveal-scroll>
+                <div>
+                    <p class="section-kicker section-kicker--on-dark" id="reviews-heading">Verified reviews · 4 / 4</p>
+                    <p class="stars" aria-label="Five stars out of five">★★★★★</p>
+                </div>
+                <p class="reviews__repeat">Repeat clients: 2 / 4</p>
+            </div>
+            <div class="reviews__grid">
+                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“He delivered everything we requested with high quality and fast turnaround. Our requirements were difficult, and he did an excellent job completing the task creatively. We will certainly be happy to hire him again.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/joseph-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Joseph Epstein</span>
+                            <span class="review-card__role">CEO</span>
+                            <a class="review-card__company" href="https://wonderfuldental.com/" rel="noopener noreferrer" target="_blank">Wonderful Dental</a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“Instead of simply executing the brief, Miloš takes the time to flag design issues and alignment inconsistencies. His willingness to question, reflect, and apply critical thinking ultimately improves the final outcome.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/corina-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Corina Culeva</span>
+                            <span class="review-card__role">Founder</span>
+                            <a class="review-card__company" href="https://zoerowyn.com/" rel="noopener noreferrer" target="_blank">Zoe Rowyn Bridal</a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“Miloš is truly a rare gem. A real jack of all trades — UX, front-end, back-end, he is proficient in all of those. The speed in which he learns new things and gains deep understanding is something I don't see very often.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/wouter-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Wouter van den Heuvel</span>
+                            <span class="review-card__role">Tech Lead</span>
+                            <a class="review-card__company" href="https://newdesigners.agency/" rel="noopener noreferrer" target="_blank">New Designers</a>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“Miloš made incredible progress in both project management and coding — leading key aspects of projects with confidence. His ability to break down complex problems and push forward, even when things got rough, was truly impressive.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/andreas-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Andreas Kruszakin-Liboska</span>
+                            <span class="review-card__role">Art Director</span>
+                            <a class="review-card__company" href="https://newdesigners.agency/" rel="noopener noreferrer" target="_blank">New Designers</a>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="teaser-strip teaser-strip--wd" aria-labelledby="wd-teaser-heading">
+            <div class="teaser-strip__inner reveal reveal--up" data-reveal-scroll>
+                <div class="teaser-strip__layout">
+                    <div class="teaser-strip__col teaser-strip__col--title">
+                        <h2 class="teaser-strip__title" id="wd-teaser-heading">Want to know how a hero animation turned into a 3.5-year collaboration?</h2>
+                    </div>
+                    <div class="teaser-strip__col teaser-strip__col--content">
+                        <aside class="teaser-strip__extract" aria-label="Wonderful Dental case summary">
+                            <div class="teaser-strip__extract-grid">
+                                <p class="teaser-strip__extract-label">Case extract</p>
+                                <div class="teaser-strip__extract-body">
+                                    <p>Wonderful Dental brought me in for a one-off hero animation in 2022. It shipped ahead of schedule — so Joseph asked if I&apos;d take a look at the rest of the store. What followed was a <strong>full Shopify Plus redesign</strong>: custom sections with parallax and scroll animations, a checkout flow audit, automated operations in Zapier and Shopify Flow, and a full speed optimization pass.</p>
+                                    <p>Three months after launch, <strong>monthly orders grew 20% and total revenue grew 45%</strong> compared to the month they hired me. Three and a half years later, we are still working together.</p>
+                                </div>
+                            </div>
+                        </aside>
+                        <a class="btn btn--ghost teaser-strip__layout-cta" href="/case">Read the Wonderful Dental story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="site-footer__wrap reveal reveal--up" data-reveal-scroll>
+            <div class="site-footer__main">
+                <div class="site-footer__shell">
+                    <div class="site-footer__grid">
+                    <div class="site-footer__col">
+                        <p class="site-footer__col-label">Contact</p>
+                        <ul class="site-footer__contact-list">
+                            <li>
+                                <span class="site-footer__contact-type">Email</span>
+                                <a class="site-footer__contact-value" href="mailto:hello@milosdronjak.me">hello@milosdronjak.me</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">Phone</span>
+                                <a class="site-footer__contact-value" href="tel:+31639293114">+31639293114</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">WhatsApp</span>
+                                <a class="site-footer__contact-value" href="https://wa.me/31639293114" rel="noopener noreferrer" target="_blank">Open chat</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">LinkedIn</span>
+                                <a class="site-footer__contact-value" href="https://www.linkedin.com/in/mdwebdev" rel="noopener noreferrer" target="_blank">mdwebdev</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">GitHub</span>
+                                <a class="site-footer__contact-value" href="https://github.com/MilosD15" rel="noopener noreferrer" target="_blank">MilosD15</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">Upwork</span>
+                                <a class="site-footer__contact-value" href="https://www.upwork.com/freelancers/~016c2ec76f60c85c55" rel="noopener noreferrer" target="_blank">Milos D.</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site-footer__col">
+                        <p class="site-footer__col-label">Pages</p>
+                        <ul class="site-footer__nav-list">
+                            <li><a href="/my-philosophy">/my-philosophy</a></li>
+                            <li><a href="/case">/case</a></li>
+                            <li><a href="/#contact">/contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="site-footer__bottom">
+                        <p class="site-footer__copy">© 2026 Miloš Dronjak · milosdronjak.me</p>
+                        <div class="site-footer__available product-tags__avail">
+                            <span class="live-dot live-dot--avail" aria-hidden="true"></span>
+                            <span>Available Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js" defer></script>
 </body>
 </html>
