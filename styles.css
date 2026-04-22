@@ -1,17 +1,33 @@
 /* Miloš Dronjak — PDP homepage · brand system */
 
 @font-face {
-    font-family: 'DM Sans';
-    src: url('font/dm-sans/DMSans-Regular.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('font/montserrat/Montserrat-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'DM Sans';
-    src: url('font/dm-sans/DMSans-Medium.ttf') format('truetype');
+    font-family: 'Montserrat';
+    src: url('font/montserrat/Montserrat-Medium.ttf') format('truetype');
     font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('font/montserrat/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('font/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -41,17 +57,20 @@
 }
 
 :root {
-    --bg: #fafafa;
+    --bg: #ffffff;
     --ink: #1c1c1c;
-    --strawberry: #c0392b;
-    --blush: #f9ecec;
-    --sky: #088ce1;
-    --steel: #1a7fbf;
-    --ice: #f0f7fd;
+    --orange: #e07b1f;
+    --orange-dark: #c96a12;
+    --orange-darker: #b85f10;
+    --strawberry: var(--orange-dark);
+    --blush: #fdf3e7;
+    --sky: var(--orange-dark);
+    --steel: #1c1c1c;
+    --ice: #fdf3e7;
     --white: #ffffff;
-    --muted: rgba(28, 28, 28, 0.58);
+    --muted: #4a4a4a;
     --line: rgba(28, 28, 28, 0.12);
-    --font-ui: 'DM Sans', system-ui, sans-serif;
+    --font-ui: 'Montserrat', system-ui, sans-serif;
     --font-display: 'Fraunces', Georgia, serif;
     --radius: 12px;
     --space: clamp(1rem, 3vw, 2rem);
@@ -81,6 +100,15 @@ body {
     min-height: 100vh;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -88,6 +116,7 @@ img {
 
 a {
     color: inherit;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, filter 0.3s ease;
 }
 
 .sr-only {
@@ -207,7 +236,7 @@ a {
     color: var(--steel);
     cursor: pointer;
     flex-shrink: 0;
-    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 
 .site-header__menu-btn:hover,
@@ -236,6 +265,22 @@ a {
     transform: rotate(180deg);
 }
 
+.site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-header__brand-logo {
+    width: 4rem;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
 .site-nav {
     display: flex;
     gap: 1.25rem;
@@ -251,7 +296,7 @@ a {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-    color: var(--sky);
+    color: var(--orange-darker);
 }
 
 .site-nav a.btn--contact-nav {
@@ -296,7 +341,7 @@ a {
     border-radius: var(--radius);
     cursor: pointer;
     border: none;
-    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:focus-visible {
@@ -305,22 +350,22 @@ a {
 }
 
 .btn--contact-nav {
-    background: var(--sky);
+    background: var(--orange-dark);
     color: var(--white);
     padding: 0.7rem 1.2rem;
     font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    text-transform: none;
+    letter-spacing: normal;
     text-decoration: none;
 }
 
 .btn--contact-nav:hover {
-    filter: brightness(1.08);
+    background: var(--orange-darker);
 }
 
 .btn--contact-nav:focus-visible {
-    outline: 2px solid var(--sky);
+    outline: 2px solid var(--orange-darker);
     outline-offset: 2px;
 }
 
@@ -330,16 +375,16 @@ a {
     padding: 0.7rem 1.2rem;
     font-size: 13px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 .btn--audit:hover {
-    filter: brightness(1.06);
+    background: var(--orange-darker);
 }
 
 .btn--audit:focus-visible {
-    outline: 2px solid var(--strawberry);
+    outline: 2px solid var(--orange-darker);
     outline-offset: 2px;
 }
 
@@ -375,15 +420,15 @@ a {
 }
 
 .gallery-main[data-view='stack'] {
-    background: #efe8e8;
+    background: #fdf3e7;
 }
 
 .gallery-main[data-view='flow'] {
-    background: #e8eef5;
+    background: #fdf3e7;
 }
 
 .gallery-main[data-view='case'] {
-    background: #f0ebe4;
+    background: #fdf3e7;
 }
 
 .gallery-main__img {
@@ -484,7 +529,7 @@ a {
     height: 7px;
     border-radius: 50%;
     background: var(--sky);
-    box-shadow: 0 0 0 3px rgba(8, 140, 225, 0.2);
+    box-shadow: 0 0 0 3px rgba(224, 123, 31, 0.2);
 }
 
 .live-dot--avail {
@@ -539,7 +584,7 @@ a {
     background: var(--white);
     color: var(--ink);
     cursor: pointer;
-    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .pill:hover {
@@ -577,7 +622,7 @@ a {
 }
 
 .btn--primary:hover {
-    filter: brightness(1.05);
+    background: var(--orange-darker);
 }
 
 .btn--primary__left {
@@ -588,8 +633,8 @@ a {
 
 .btn--primary__right {
     font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    text-transform: none;
+    letter-spacing: normal;
     opacity: 0.95;
     line-height: 1.35;
     text-align: right;
@@ -625,8 +670,8 @@ a {
 
 .btn--inline:hover {
     background: var(--ice);
-    color: var(--sky);
-    border-color: var(--sky);
+    color: var(--orange-darker);
+    border-color: var(--orange-darker);
 }
 
 /* Description */
@@ -661,9 +706,9 @@ a {
 }
 
 .description-block__body {
-    font-family: var(--font-display);
+    font-family: var(--font-ui);
     font-weight: 400;
-    font-size: 1.125rem;
+    font-size: 16px;
     line-height: 1.65;
     display: flex;
     flex-direction: column;
@@ -889,7 +934,7 @@ a {
 }
 
 .reviews__head .stars {
-    color: var(--strawberry);
+    color: var(--orange);
     font-size: 0.95rem;
     letter-spacing: 0.08em;
     margin-top: 0.35rem;
@@ -899,7 +944,7 @@ a {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    color: rgba(250, 250, 250, 0.55);
+    color: var(--orange);
 }
 
 .reviews__grid {
@@ -922,7 +967,7 @@ a {
 }
 
 .review-card__stars {
-    color: #c0392b;
+    color: var(--strawberry);
     font-size: 1.35rem;
     line-height: 1;
     letter-spacing: 0.12em;
@@ -934,9 +979,9 @@ a {
 }
 
 .review-card blockquote p {
-    font-family: var(--font-display);
+    font-family: var(--font-ui);
     font-style: italic;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.62;
 }
 
@@ -1041,7 +1086,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    transition: background 0.15s ease, border-color 0.15s ease;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .related-card:hover {
@@ -1057,7 +1102,7 @@ a {
 
 .related-card p {
     font-size: 0.8125rem;
-    color: rgba(250, 250, 250, 0.65);
+    color: rgba(250, 250, 250, 0.78);
     line-height: 1.5;
 }
 
@@ -1067,7 +1112,7 @@ a {
 }
 
 .related-card--accent:hover {
-    background: #a93226;
+    background: var(--orange-darker);
 }
 
 .related-card--accent p {
@@ -1144,7 +1189,7 @@ a {
     white-space: nowrap;
     border: none;
     letter-spacing: 0.02em;
-    transition: filter 0.15s ease, transform 0.1s ease;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .site-footer__cta-btn:hover {
@@ -1206,7 +1251,7 @@ a {
     font-size: 0.7rem;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-    color: rgba(250, 250, 250, 0.4);
+    color: rgba(250, 250, 250, 0.62);
     min-width: 4.25rem;
     flex-shrink: 0;
 }
@@ -1232,13 +1277,13 @@ a {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    color: var(--steel);
+    color: var(--orange);
     text-decoration: none;
-    transition: color 0.15s ease;
+    transition: color 0.3s ease;
 }
 
 .site-footer__nav-list a:hover {
-    color: var(--sky);
+    color: var(--orange-dark);
 }
 
 .site-footer__bottom {
@@ -1252,7 +1297,7 @@ a {
 
 .site-footer__copy {
     font-size: 0.8125rem;
-    color: rgba(250, 250, 250, 0.38);
+    color: rgba(250, 250, 250, 0.58);
     margin: 0;
 }
 
@@ -1421,6 +1466,12 @@ a {
         flex-wrap: nowrap;
         align-items: center;
         gap: 0.75rem;
+    }
+
+    .site-header__brand-logo {
+        width: 3.55rem;
+        aspect-ratio: 16 / 9;
+        height: auto;
     }
 
     .site-nav a.site-nav__contact-drawer {

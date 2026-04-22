@@ -2,23 +2,29 @@
   const VARIANTS = {
     automations: {
       subhead:
-        'I clear the automations your seniors keep leaving behind — Zapier, Make, Shopify Flow, and custom code when the no-code options run out.',
+        'I clear the automations your seniors keep leaving behind, Zapier, Make, Shopify Flow, and custom code when the no-code options run out.',
       variant:
-        'Every Shopify agency has the same quiet backlog. Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for — and I make it work the way it was supposed to.'
+        'Every Shopify agency has the same quiet backlog. Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for, and I make it work the way it was supposed to.'
     },
     storefront: {
       subhead:
-        'I build the custom Shopify sections your theme can\'t do out of the box — and the performance that keeps them from slowing the store down.',
+        'I build the custom Shopify sections your theme can\'t do out of the box, and the performance that keeps them from slowing the store down.',
       variant:
-        'Custom Liquid sections, scroll animations, parallax effects, page transitions, metafield-driven storefronts. Speed optimization, codebase cleanup, Core Web Vitals. Checkout audits and Shopify Plus customization. I\'ve been doing this on live stores since 2022 — not in a sandbox, in production, with real customers on the other end.'
+        'Custom Liquid sections, scroll animations, parallax effects, page transitions, metafield-driven storefronts. Speed optimization, codebase cleanup, Core Web Vitals. Checkout audits and Shopify Plus customization. I\'ve been doing this on live stores since 2022, not in a sandbox, in production, with real customers on the other end.'
     },
     both: {
       subhead:
-        'I bridge the gap between the storefront and the systems behind it — so the front end and the automation layer actually work as one.',
+        'I bridge the gap between the storefront and the systems behind it, so the front end and the automation layer actually work as one.',
       variant:
-        'Most developers do one or the other. Theme work stays in the theme. Automation work lives in Zapier, disconnected from what the customer sees. I work across both — which means when a Flow trigger needs a Liquid metafield, or a Zapier webhook needs to match a section\'s logic, I don\'t need to hand it off. I close the gap myself.'
+        'Most developers do one or the other. Theme work stays in the theme. Automation work lives in Zapier, disconnected from what the customer sees. I work across both, which means when a Flow trigger needs a Liquid metafield, or a Zapier webhook needs to match a section\'s logic, I don\'t need to hand it off. I close the gap myself.'
     }
   }
+
+  const SYS = window.MilosSite || {}
+  const motion = SYS.motion || {}
+  const ui = SYS.ui || {}
+  const motionMs = motion.ms || {}
+  const ioDefaults = motion.intersectionObserver || {}
 
   const focusButtons = document.querySelectorAll('[data-focus-btn]')
   const subheadEl = document.getElementById('product-subhead')
@@ -29,10 +35,13 @@
     document.getElementById('variant-copy-desc')
   ].filter(Boolean)
 
-  const FADE_MS = 280
-  const CHAIN_START_MS = 180
-  const CHAIN_STAGGER_MS = 105
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const FADE_MS = typeof motionMs.copyFade === 'number' ? motionMs.copyFade : 280
+  const CHAIN_START_MS = typeof motionMs.chainStart === 'number' ? motionMs.chainStart : 180
+  const CHAIN_STAGGER_MS = typeof motionMs.chainStagger === 'number' ? motionMs.chainStagger : 105
+  const prefersReducedMotion =
+    typeof SYS.prefersReducedMotion === 'function'
+      ? SYS.prefersReducedMotion()
+      : window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   let focus = 'automations'
 
@@ -119,19 +128,76 @@
       revealAll(nodes)
       return
     }
-    const io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return
-          entry.target.classList.add('is-revealed')
-          io.unobserve(entry.target)
-        })
-      },
-      { threshold: 0.06, rootMargin: '0px 0px 10% 0px' }
-    )
-    nodes.forEach(function (n) {
-      io.observe(n)
+    const sectionNodes = document.querySelectorAll('[data-reveal-section]')
+    const groups = Array.from(sectionNodes)
+      .map(function (section) {
+        return {
+          section: section,
+          nodes: Array.from(section.querySelectorAll('[data-reveal-scroll]'))
+        }
+      })
+      .filter(function (g) {
+        return g.nodes.length > 0
+      })
+
+    const grouped = new Set()
+    groups.forEach(function (g) {
+      g.nodes.forEach(function (n) {
+        grouped.add(n)
+      })
     })
+
+    const looseNodes = Array.from(nodes).filter(function (n) {
+      return !grouped.has(n)
+    })
+
+    function revealGroup(group) {
+      group.nodes.forEach(function (node, i) {
+        window.setTimeout(function () {
+          node.classList.add('is-revealed')
+        }, i * Math.max(60, CHAIN_STAGGER_MS - 20))
+      })
+      group.done = true
+    }
+
+    function sectionPassed60Percent(section) {
+      const rect = section.getBoundingClientRect()
+      const sectionHeight = Math.max(section.offsetHeight, 1)
+      const viewedPx = window.innerHeight - rect.top
+      return viewedPx >= sectionHeight * 0.6
+    }
+
+    function checkSectionGroups() {
+      groups.forEach(function (group) {
+        if (group.done) return
+        if (sectionPassed60Percent(group.section)) {
+          revealGroup(group)
+        }
+      })
+    }
+
+    checkSectionGroups()
+    window.addEventListener('scroll', checkSectionGroups, { passive: true })
+    window.addEventListener('resize', checkSectionGroups)
+
+    if (looseNodes.length) {
+      const io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return
+            entry.target.classList.add('is-revealed')
+            io.unobserve(entry.target)
+          })
+        },
+        {
+          threshold: typeof ioDefaults.threshold === 'number' ? ioDefaults.threshold : 0.06,
+          rootMargin: ioDefaults.rootMargin || '0px 0px 10% 0px'
+        }
+      )
+      looseNodes.forEach(function (n) {
+        io.observe(n)
+      })
+    }
   }
 
   function bootReveals() {
@@ -144,7 +210,9 @@
     const nav = document.getElementById('site-nav-primary')
     if (!btn || !nav) return
 
-    const mq = window.matchMedia('(max-width: 640px)')
+    const navMq =
+      ui.breakpoints && ui.breakpoints.navMobile ? ui.breakpoints.navMobile : '(max-width: 640px)'
+    const mq = window.matchMedia(navMq)
 
     function setOpen(open) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false')
