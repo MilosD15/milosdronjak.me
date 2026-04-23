@@ -1,13 +1,13 @@
 # Styling rules — milosdronjak.me
 
-Static site: global tokens live in **`styles.css`** (`:root`). Reusable typography and stacks live in **`utilities.css`**.
+Static site: global tokens live in **`css/styles.css`** (`:root`). Reusable typography and stacks live in **`css/utilities.css`**.
 
 ## Load order
 
-1. `styles.css` — fonts, `:root`, layout, components, component-level responsive rules  
-2. `utilities.css` — `u-*` utility classes for new pages and prose
+1. `css/styles.css` — fonts, `:root`, layout, components, component-level responsive rules  
+2. `css/utilities.css` — `u-*` utility classes for new pages and prose
 
-## Tokens (`:root` in styles.css)
+## Tokens (`:root` in `css/styles.css`)
 
 | Token | Role |
 |--------|------|
@@ -20,7 +20,7 @@ Static site: global tokens live in **`styles.css`** (`:root`). Reusable typograp
 | `--radius` | 12px — rounded rects (pills stay `999px`) |
 | `--space`, `--max` | Page gutter and shell width |
 
-## Utility classes (`utilities.css`)
+## Utility classes (`css/utilities.css`)
 
 Prefix: **`u-`**. Combine with semantic HTML (`<h1 class="u-type-display">`).
 
@@ -29,7 +29,7 @@ Prefix: **`u-`**. Combine with semantic HTML (`<h1 class="u-type-display">`).
 | `u-type-display` | Hero / page title (Fraunces 900, large; shrinks at ≤640px) |
 | `u-type-h2` | Section title |
 | `u-type-h3` | Subsection / card title (UI weight) |
-| `u-type-body` | Default paragraph (sans, ~18px desktop) |
+| `u-type-body` | Default paragraph (sans, 16px desktop) |
 | `u-type-body-serif` | Editorial paragraph (Fraunces, same size) |
 | `u-type-body-sm` | Compact body |
 | `u-type-muted` | Muted colour (pair with a type class) |
@@ -48,9 +48,9 @@ Prefix: **`u-`**. Combine with semantic HTML (`<h1 class="u-type-display">`).
 
 `--u-type-display`, `--u-type-display-sm`, `--u-type-h2`, `--u-type-h2-sm`, etc. — tweak once for all pages using these utilities. **`--u-type-body-mobile`** (13px) and **`--u-type-h3-sm`** / **`--u-type-ui-sm`** back the phone scale. **`--u-interactive-ms`** controls utility link transition speed (currently 300ms).
 
-## Responsive utilities (`utilities.css`)
+## Responsive utilities (`css/utilities.css`)
 
-Aligned with **`styles.css`** breakpoints **960px** (tablet / stacked layouts) and **640px** (phone).
+Aligned with **`css/styles.css`** breakpoints **960px** (tablet / stacked layouts) and **640px** (phone).
 
 | Breakpoint | What changes |
 |-------------|----------------|
@@ -65,7 +65,7 @@ Home PDP sections use **named classes** (`.product-title`, `.description-block__
 
 ## Buttons
 
-Button look is component-level (`.btn`, `.btn--primary`, …) in `styles.css`. Do not duplicate button CSS in utilities; use existing modifiers.
+Button look is component-level (`.btn`, `.btn--primary`, …) in `css/styles.css`. Do not duplicate button CSS in utilities; use existing modifiers.
 
 ### Accent interaction rule
 
@@ -74,4 +74,4 @@ Button look is component-level (`.btn`, `.btn--primary`, …) in `styles.css`. D
 
 ## Reduced motion
 
-`prefers-reduced-motion: reduce` is handled in `styles.css` for `.reveal`, `.variant-copy`, and the menu icon. New CSS transitions should repeat that pattern (see `docs/animations.md`).
+`prefers-reduced-motion: reduce` is handled in `css/styles.css` for `.reveal`, `.variant-copy`, and the menu icon. New CSS transitions should repeat that pattern (see `docs/animations.md`).

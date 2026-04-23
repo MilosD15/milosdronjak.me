@@ -1,7 +1,7 @@
 # Site docs
 
-- **[styling.md](./styling.md)** — tokens, `utilities.css`, `u-*` classes  
-- **[animations.md](./animations.md)** — `MilosSite` motion / interaction contract and `home.js` patterns  
+- **[styling.md](./styling.md)** — tokens, `css/utilities.css`, `u-*` classes  
+- **[animations.md](./animations.md)** — `MilosSite` motion / interaction contract and `js/home.js` patterns  
 
 Scripts: load **`js/site-system.js`** before any page script that reads `window.MilosSite`.
 

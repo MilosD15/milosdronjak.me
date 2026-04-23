@@ -5,7 +5,7 @@ Runtime constants and helpers live in **`js/site-system.js`** on the global **`w
 ## Script load order
 
 1. **`js/site-system.js`** (defines `MilosSite`)  
-2. **`home.js`** (or future page scripts) — read `MilosSite` with safe fallbacks if the file is missing
+2. **`js/home.js`** (or future page scripts) — read `MilosSite` with safe fallbacks if the file is missing
 
 ## `MilosSite.motion`
 
@@ -21,19 +21,19 @@ Change these once; **`home.js`** reads them via `MilosSite.motion.ms`.
 
 ### `motion.css` (documentation mirror of motion-heavy CSS)
 
-Documents typical durations that **must stay in sync** with `styles.css` rules:
+Documents typical durations that **must stay in sync** with `css/styles.css` rules:
 
 - `revealOpacityTransformMs` — `.reveal` opacity/transform (0.6s)
 - `variantOpacityTransformMs` — `.variant-copy` (0.28s)
 - `menuIconRotateMs` — `.site-header__menu-icon` transition
 
-General UI hover/focus transitions (links/buttons/cards) are standardized in `styles.css` at **300ms** and are not JS-driven.
+General UI hover/focus transitions (links/buttons/cards) are standardized in `css/styles.css` at **300ms** and are not JS-driven.
 
 If you change CSS transition length, update **`MilosSite.motion.css`** in `js/site-system.js` and any `setTimeout` that depends on it.
 
 ### `motion.easing`
 
-String tokens for `transition-timing-function` when setting styles from JS (optional). CSS today uses the same curves in `styles.css` (e.g. reveal `cubic-bezier(0.22, 1, 0.36, 1)`).
+String tokens for `transition-timing-function` when setting styles from JS (optional). CSS today uses the same curves in `css/styles.css` (e.g. reveal `cubic-bezier(0.22, 1, 0.36, 1)`).
 
 ### Scroll reveal trigger rules
 
@@ -82,6 +82,6 @@ If `true`, prefer instant state (e.g. add `is-revealed` immediately), matching C
 ## Adding a new animation
 
 1. Add or reuse a duration in **`MilosSite.motion.ms`** (if JS-driven) and document the CSS duration in **`motion.css`**  
-2. Add CSS under a clear class (e.g. `.my-block.is-active`) in `styles.css`  
+2. Add CSS under a clear class (e.g. `.my-block.is-active`) in `css/styles.css`  
 3. If motion matters for a11y, branch on **`MilosSite.prefersReducedMotion()`**  
 4. Update this file with the class name and timing

@@ -20,8 +20,8 @@
     <meta name="twitter:title" content="Miloš Dronjak, Shopify dev &amp; automation specialist">
     <meta name="twitter:description" content="I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.">
     <meta name="twitter:image" content="https://milosdronjak.me/img/logo-white_100-only_MD-rect.png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/utilities.css">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -58,11 +58,12 @@
                 </svg>
             </a>
             <nav id="site-nav-primary" class="site-nav" aria-label="Primary">
-                <a href="/my-philosophy">my-philosophy</a>
+                <a class="is-active" href="/">home</a>
+                <a href="/how-I-work">how-I-work</a>
                 <a href="/case">case</a>
             </nav>
             <div class="site-header__meta">
-                <span class="status-pill" title="Queue status">Backlog · 0 tickets</span>
+                <span class="site-header__label">COMPLETELY FREE</span>
                 <a class="btn btn--audit" href="mailto:hello@milosdronjak.me?subject=Backlog%20audit">+ Book audit</a>
             </div>
         </div>
@@ -75,23 +76,25 @@
                     <div class="gallery-main" id="gallery-main" data-view="portrait">
                         <img class="gallery-main__img" src="img/my-pic-newest.jpeg" alt="Miloš Dronjak" width="960" height="960" decoding="async">
                     </div>
+                    <!--
                     <div class="gallery-meta">
                         <span class="gallery-meta__label">Pages</span>
                     </div>
                     <nav class="gallery-thumbs" aria-label="Site pages">
-                        <a class="gallery-thumb" href="/my-philosophy">My philosophy</a>
+                        <a class="gallery-thumb" href="/how-I-work">How I work</a>
                         <a class="gallery-thumb" href="/case">Case</a>
                         <a class="gallery-thumb" href="/contact">Contact</a>
                     </nav>
+                    -->
                 </div>
 
                 <div class="pdp__detail">
                     <div class="product-tags reveal reveal--up" data-reveal-chain>
-                        <span class="product-tags__lead">Shopify dev &amp; automation specialist ·</span>
+                        <span class="product-tags__lead">Shopify dev &amp; automation specialist <span class="product-tags__lead-dot" aria-hidden="true">·</span></span>
                         <span class="product-tags__avail"><span class="live-dot live-dot--avail" aria-hidden="true"></span>Available Now</span>
                     </div>
                     <div class="product-headline-wrap reveal reveal--up" data-reveal-chain>
-                        <h1 class="product-title" id="product-headline">The only Shopify dev whose first day isn&apos;t your first problem.</h1>
+                        <h1 class="product-title" id="product-headline">The only Shopify dev whose first day <span class="u-italic u-fw-heavy u-text-accent">isn&apos;t your first problem</span>.</h1>
                     </div>
                     <div id="variant-copy-hero" class="variant-copy variant-copy--hero reveal reveal--up" data-reveal-chain>
                         <p class="product-lede" id="product-subhead">I clear the automations your seniors keep leaving behind, Zapier, Make, Shopify Flow, and custom code when the no-code options run out.</p>
@@ -117,27 +120,25 @@
             </div>
         </section>
 
-        <section class="description-block" id="automations" aria-labelledby="desc-heading" data-reveal-section>
+        <section class="description-block" id="automations" aria-label="Description" data-reveal-section>
             <div class="description-block__grid">
-                <p class="section-kicker reveal reveal--up" id="desc-heading" data-reveal-scroll>Description</p>
                 <div class="description-block__body reveal reveal--up" data-reveal-scroll>
                     <div id="variant-copy-desc" class="variant-copy variant-copy--desc">
-                        <p id="desc-variant">Every Shopify agency has the same quiet backlog. Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for, and I make it work the way it was supposed to.</p>
+                        <p id="desc-variant" class="description-block__item"><strong>Every Shopify agency has the same quiet backlog.</strong><span>Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for, and I make it work the way it was supposed to.</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="reviews" aria-labelledby="reviews-heading" data-reveal-section>
-            <div class="reviews__head reveal reveal--up" data-reveal-scroll>
-                <div>
-                    <p class="section-kicker section-kicker--on-dark" id="reviews-heading">Verified reviews · 4 / 4</p>
-                    <p class="stars" aria-label="Five stars out of five">★★★★★</p>
+            <div class="reviews__inner">
+                <div class="reviews__head reveal reveal--up" data-reveal-scroll>
+                    <div>
+                        <h2 class="reviews__title u-type-h2" id="reviews-heading">Verified reviews</h2>
+                    </div>
                 </div>
-                <p class="reviews__repeat">Repeat clients: 2 / 4</p>
-            </div>
-            <div class="reviews__grid">
-                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                <div class="reviews__grid">
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
                     <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
                     <blockquote>
                         <p>“He delivered everything we requested with high quality and fast turnaround. Our requirements were difficult, and he did an excellent job completing the task creatively. We will certainly be happy to hire him again.”</p>
@@ -150,8 +151,8 @@
                             <a class="review-card__company" href="https://wonderfuldental.com/" rel="noopener noreferrer" target="_blank">Wonderful Dental</a>
                         </div>
                     </figcaption>
-                </figure>
-                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    </figure>
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
                     <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
                     <blockquote>
                         <p>“Instead of simply executing the brief, Miloš takes the time to flag design issues and alignment inconsistencies. His willingness to question, reflect, and apply critical thinking ultimately improves the final outcome.”</p>
@@ -164,8 +165,8 @@
                             <a class="review-card__company" href="https://zoerowyn.com/" rel="noopener noreferrer" target="_blank">Zoe Rowyn Bridal</a>
                         </div>
                     </figcaption>
-                </figure>
-                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    </figure>
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
                     <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
                     <blockquote>
                         <p>“Miloš is truly a rare gem. A real jack of all trades, UX, front-end, back-end, he is proficient in all of those. The speed in which he learns new things and gains deep understanding is something I don't see very often.”</p>
@@ -178,8 +179,8 @@
                             <a class="review-card__company" href="https://newdesigners.agency/" rel="noopener noreferrer" target="_blank">New Designers</a>
                         </div>
                     </figcaption>
-                </figure>
-                <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    </figure>
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
                     <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
                     <blockquote>
                         <p>“Miloš made incredible progress in both project management and coding, leading key aspects of projects with confidence. His ability to break down complex problems and push forward, even when things got rough, was truly impressive.”</p>
@@ -192,7 +193,8 @@
                             <a class="review-card__company" href="https://newdesigners.agency/" rel="noopener noreferrer" target="_blank">New Designers</a>
                         </div>
                     </figcaption>
-                </figure>
+                    </figure>
+                </div>
             </div>
         </section>
 
@@ -200,12 +202,11 @@
             <div class="teaser-strip__inner">
                 <div class="teaser-strip__layout">
                     <div class="teaser-strip__col teaser-strip__col--title reveal reveal--up" data-reveal-scroll>
-                        <h2 class="teaser-strip__title" id="wd-teaser-heading">Want to know how a hero animation turned into a 3.5-year collaboration?</h2>
+                        <h2 class="teaser-strip__title" id="wd-teaser-heading">Want to know how a hero animation turned into a <span class="teaser-strip__title-accent">3.5-year collaboration</span>?</h2>
                     </div>
                     <div class="teaser-strip__col teaser-strip__col--content">
                         <aside class="teaser-strip__extract reveal reveal--up" aria-label="Wonderful Dental case summary" data-reveal-scroll>
                             <div class="teaser-strip__extract-grid">
-                                <p class="teaser-strip__extract-label">Case extract</p>
                                 <div class="teaser-strip__extract-body">
                                     <p>Wonderful Dental brought me in for a one-off hero animation in 2022. It shipped ahead of schedule, so Joseph asked if I&apos;d take a look at the rest of the store. What followed was a <strong>full Shopify Plus redesign</strong>: custom sections with parallax and scroll animations, a checkout flow audit, automated operations in Zapier and Shopify Flow, and a full speed optimization pass.</p>
                                     <p>Three months after launch, <strong>monthly orders grew 20% and total revenue grew 45%</strong> compared to the month they hired me. Three and a half years later, we are still working together.</p>
@@ -256,7 +257,8 @@
                     <div class="site-footer__col reveal reveal--up" data-reveal-scroll>
                         <p class="site-footer__col-label">Pages</p>
                         <ul class="site-footer__nav-list">
-                            <li><a href="/my-philosophy">my-philosophy</a></li>
+                            <li><a href="/">home</a></li>
+                            <li><a href="/how-I-work">how-I-work</a></li>
                             <li><a href="/case">case</a></li>
                             <li><a href="/#contact">contact</a></li>
                         </ul>
@@ -275,6 +277,6 @@
     </footer>
 
     <script src="js/site-system.js" defer></script>
-    <script src="home.js" defer></script>
+    <script src="js/home.js" defer></script>
 </body>
 </html>

@@ -3,20 +3,23 @@
     automations: {
       subhead:
         'I clear the automations your seniors keep leaving behind, Zapier, Make, Shopify Flow, and custom code when the no-code options run out.',
-      variant:
-        'Every Shopify agency has the same quiet backlog. Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for, and I make it work the way it was supposed to.'
+      variantLead: 'Every Shopify agency has the same quiet backlog.',
+      variantBody:
+        'Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for, and I make it work the way it was supposed to.'
     },
     storefront: {
       subhead:
         'I build the custom Shopify sections your theme can\'t do out of the box, and the performance that keeps them from slowing the store down.',
-      variant:
-        'Custom Liquid sections, scroll animations, parallax effects, page transitions, metafield-driven storefronts. Speed optimization, codebase cleanup, Core Web Vitals. Checkout audits and Shopify Plus customization. I\'ve been doing this on live stores since 2022, not in a sandbox, in production, with real customers on the other end.'
+      variantLead: 'Custom Liquid sections and performance fixes that ship.',
+      variantBody:
+        'Scroll animations, parallax effects, page transitions, and metafield-driven storefronts. Speed optimization, codebase cleanup, and Core Web Vitals improvements. Checkout audits and Shopify Plus customization. I\'ve been doing this on live stores since 2022, not in a sandbox, in production, with real customers on the other end.'
     },
     both: {
       subhead:
         'I bridge the gap between the storefront and the systems behind it, so the front end and the automation layer actually work as one.',
-      variant:
-        'Most developers do one or the other. Theme work stays in the theme. Automation work lives in Zapier, disconnected from what the customer sees. I work across both, which means when a Flow trigger needs a Liquid metafield, or a Zapier webhook needs to match a section\'s logic, I don\'t need to hand it off. I close the gap myself.'
+      variantLead: 'Most developers do one or the other.',
+      variantBody:
+        'Theme work stays in the theme. Automation work lives in Zapier, disconnected from what the customer sees. I work across both, which means when a Flow trigger needs a Liquid metafield, or a Zapier webhook needs to match a section\'s logic, I don\'t need to hand it off. I close the gap myself.'
     }
   }
 
@@ -55,7 +58,9 @@
     const v = VARIANTS[focus]
     if (!v) return
     if (subheadEl) subheadEl.textContent = v.subhead
-    if (variantEl) variantEl.textContent = v.variant
+    if (variantEl) {
+      variantEl.innerHTML = '<strong>' + v.variantLead + '</strong><span>' + v.variantBody + '</span>'
+    }
   }
 
   function announceVariant() {
