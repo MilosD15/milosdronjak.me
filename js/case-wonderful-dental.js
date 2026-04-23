@@ -47,7 +47,7 @@
       const sectionHeight = Math.max(section.offsetHeight, 1)
       const viewedPx = window.innerHeight - rect.top
       const rawThreshold = Number.parseFloat(section.getAttribute('data-reveal-threshold'))
-      const threshold = Number.isFinite(rawThreshold) ? Math.min(Math.max(rawThreshold, 0), 1) : 0.6
+      const threshold = Number.isFinite(rawThreshold) ? Math.min(Math.max(rawThreshold, 0), 1) : 0.2
       return viewedPx >= sectionHeight * threshold
     }
 

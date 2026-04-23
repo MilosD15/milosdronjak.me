@@ -4,6 +4,7 @@
 - **[animations.md](./animations.md)** — `MilosSite` motion / interaction contract and `js/home.js` patterns  
 - **[cases.md](./cases.md)** — reusable case-page structure, section patterns, and media conventions  
 - **[contact.md](./contact.md)** — contact page structure, audience toggle forms, and CTA/linking conventions  
+- **[brand-identity-unified.md](./brand-identity-unified.md)** — portable one-file visual identity system (tokens, classes, components, motion, responsive rules)  
 
 Scripts: load **`js/site-system.js`** before any page script that reads `window.MilosSite`.
 

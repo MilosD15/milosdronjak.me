@@ -6,7 +6,6 @@
 
 .contact-hero {
     padding: clamp(1.5rem, 4vw, 2.75rem) 0;
-    border-bottom: 1px solid var(--line);
 }
 
 .contact-supertitle {
@@ -27,7 +26,11 @@
 }
 
 .contact-form-block {
-    padding: clamp(1.75rem, 4vw, 3rem) 0;
+    padding: 0 0 clamp(1.75rem, 4vw, 3rem);
+}
+
+.contact-followup {
+    padding: 0 0 clamp(2rem, 5vw, 3rem);
 }
 
 .contact-form-card {
@@ -118,6 +121,19 @@
 .contact-form__field select:focus-visible {
     outline: 2px solid var(--orange-dark);
     outline-offset: 2px;
+}
+
+.contact-form__field input.is-invalid,
+.contact-form__field textarea.is-invalid {
+    border-color: #c43f30;
+    box-shadow: 0 0 0 2px rgba(196, 63, 48, 0.16);
+}
+
+.contact-form__error {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: #c43f30;
 }
 
 .contact-form__cta {

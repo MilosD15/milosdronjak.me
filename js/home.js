@@ -165,17 +165,17 @@
       group.done = true
     }
 
-    function sectionPassed60Percent(section) {
+    function sectionPassed20Percent(section) {
       const rect = section.getBoundingClientRect()
       const sectionHeight = Math.max(section.offsetHeight, 1)
       const viewedPx = window.innerHeight - rect.top
-      return viewedPx >= sectionHeight * 0.6
+      return viewedPx >= sectionHeight * 0.2
     }
 
     function checkSectionGroups() {
       groups.forEach(function (group) {
         if (group.done) return
-        if (sectionPassed60Percent(group.section)) {
+        if (sectionPassed20Percent(group.section)) {
           revealGroup(group)
         }
       })
