@@ -49,7 +49,7 @@
       const rect = section.getBoundingClientRect()
       const sectionHeight = Math.max(section.offsetHeight, 1)
       const viewedPx = window.innerHeight - rect.top
-      return viewedPx >= sectionHeight * 0.6
+      return viewedPx >= sectionHeight * 0.2
     }
 
     function checkSectionGroups() {
@@ -167,10 +167,99 @@
     setType(activeBtn ? activeBtn.getAttribute('data-value') : 'agency', true)
   }
 
+  function ensureErrorNode(field) {
+    let node = field.querySelector('.contact-form__error')
+    if (!node) {
+      node = document.createElement('p')
+      node.className = 'contact-form__error'
+      field.appendChild(node)
+    }
+    return node
+  }
+
+  function setFieldError(field, control, message) {
+    const errorNode = ensureErrorNode(field)
+    control.classList.add('is-invalid')
+    control.setAttribute('aria-invalid', 'true')
+    errorNode.textContent = message
+  }
+
+  function clearFieldError(field, control) {
+    const errorNode = field.querySelector('.contact-form__error')
+    control.classList.remove('is-invalid')
+    control.removeAttribute('aria-invalid')
+    if (errorNode) errorNode.textContent = ''
+  }
+
+  function initFormValidation() {
+    const forms = Array.from(document.querySelectorAll('.contact-form'))
+    if (!forms.length) return
+
+    forms.forEach(function (form) {
+      const fields = Array.from(form.querySelectorAll('.contact-form__field'))
+      if (fields.length < 3) return
+
+      const nameField = fields[0]
+      const emailField = fields[1]
+      const messageField = fields[2]
+      const nameInput = nameField.querySelector('input, textarea')
+      const emailInput = emailField.querySelector('input[type="email"]')
+      const messageInput = messageField.querySelector('textarea')
+      if (!nameInput || !emailInput || !messageInput) return
+
+      function validateName() {
+        const value = nameInput.value.trim()
+        if (!value) {
+          setFieldError(nameField, nameInput, 'Name is required.')
+          return false
+        }
+        clearFieldError(nameField, nameInput)
+        return true
+      }
+
+      function validateEmail() {
+        const value = emailInput.value.trim()
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+        if (!value) {
+          setFieldError(emailField, emailInput, 'Email is required.')
+          return false
+        }
+        if (!valid) {
+          setFieldError(emailField, emailInput, 'Please enter a valid email address.')
+          return false
+        }
+        clearFieldError(emailField, emailInput)
+        return true
+      }
+
+      function validateMessage() {
+        const value = messageInput.value.trim()
+        if (!value) {
+          setFieldError(messageField, messageInput, 'Message is required.')
+          return false
+        }
+        clearFieldError(messageField, messageInput)
+        return true
+      }
+
+      nameInput.addEventListener('input', validateName)
+      emailInput.addEventListener('input', validateEmail)
+      messageInput.addEventListener('input', validateMessage)
+
+      form.addEventListener('submit', function (e) {
+        const valid = validateName() && validateEmail() && validateMessage()
+        if (!valid) {
+          e.preventDefault()
+        }
+      })
+    })
+  }
+
   function boot() {
     initScrollReveals()
     initNavMenu()
     initContactTypeToggle()
+    initFormValidation()
   }
 
   if (document.readyState === 'loading') {
