@@ -546,6 +546,7 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
+    font-size: 0.7rem;
     color: #3d9a55;
     text-transform: uppercase;
     letter-spacing: 0.07em;
@@ -646,6 +647,10 @@ a {
     text-align: left;
     flex-wrap: wrap;
     gap: 0.35rem 1rem;
+}
+
+.btn--primary[href*='Backlog%20audit'] {
+    font-weight: 600;
 }
 
 .btn--primary:hover {
@@ -827,7 +832,7 @@ a {
 .backlog-diagnostic__inner {
     max-width: var(--max);
     margin: 0 auto;
-    padding: clamp(3rem, 7vw, 5rem) var(--space);
+    padding: clamp(1.5rem, 7vw, 3rem) var(--space);
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
     gap: clamp(1.5rem, 4vw, 3rem);
@@ -849,6 +854,10 @@ a {
     color: var(--ink);
     margin: 0 0 1.25rem;
     max-width: 22ch;
+}
+
+.backlog-diagnostic__title.u-type-h2 {
+    font-size: var(--u-type-h2);
 }
 
 .backlog-diagnostic__scene {
@@ -1059,8 +1068,6 @@ a {
     grid-template-columns: minmax(0, 1fr) minmax(22rem, 1fr);
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: center;
-    padding-top: clamp(3rem, 7vw, 5rem);
-    padding-bottom: clamp(3rem, 7vw, 5rem);
 }
 
 .backlog-diagnostic--philosophy .backlog-diagnostic__left {
@@ -1126,9 +1133,9 @@ a {
 }
 
 .teaser-strip--wd {
-    background: var(--blush);
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
 }
 
 .teaser-strip__inner {
@@ -1170,12 +1177,20 @@ a {
     margin: 0;
 }
 
+.teaser-strip__title.u-type-h2 {
+    font-size: var(--u-type-h2);
+}
+
 .teaser-strip--wd .teaser-strip__title {
     color: var(--ink);
     text-shadow: none;
     font-size: clamp(1.7rem, 3.5vw, 2.4rem);
     max-width: none;
     width: 100%;
+}
+
+.teaser-strip--wd .teaser-strip__title.u-type-h2 {
+    font-size: var(--u-type-h2);
 }
 
 .teaser-strip__title-accent {
@@ -1265,8 +1280,9 @@ a {
 /* Reviews */
 
 .reviews {
-    background: var(--ink);
-    color: var(--bg);
+    background: var(--blush);
+    color: var(--ink);
+    border-top: 1px solid var(--line);
     padding: clamp(2.5rem, 6vw, 4rem) 0;
 }
 
@@ -1288,7 +1304,7 @@ a {
 }
 
 .reviews .reviews__title {
-    color: var(--orange);
+    color: var(--ink);
     margin: 0;
 }
 
@@ -1302,6 +1318,7 @@ a {
 .review-card {
     background: var(--white);
     color: var(--ink);
+    border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: clamp(1.35rem, 3vw, 1.85rem);
     display: flex;
@@ -1375,7 +1392,7 @@ a {
 .review-card__company {
     font-family: var(--font-ui);
     font-weight: 500;
-    font-size: 0.9375rem;
+    font-size: 0.92rem;
     color: var(--ink);
     letter-spacing: 0.01em;
     line-height: 1.35;
@@ -1640,13 +1657,9 @@ a {
 }
 
 .site-footer__copy {
-    font-size: var(--body-text-size);
+    font-size: 0.82rem;
     color: rgba(250, 250, 250, 0.58);
     margin: 0;
-}
-
-.site-footer__available.product-tags__avail {
-    font-size: 0.7rem;
 }
 
 /* Responsive */
@@ -1745,6 +1758,7 @@ a {
 @media (max-width: 640px) {
     :root {
         --body-text-size: var(--body-text-size-mobile);
+        --space: 0.6rem;
     }
 
     .site-header__label {
@@ -1812,6 +1826,12 @@ a {
         line-height: 1.18;
     }
 
+    .teaser-strip__title.u-type-h2,
+    .teaser-strip--wd .teaser-strip__title.u-type-h2,
+    .backlog-diagnostic__title.u-type-h2 {
+        font-size: var(--u-type-h2-sm);
+    }
+
     .site-footer__cta-btn {
         font-size: 13px;
     }
@@ -1826,6 +1846,10 @@ a {
     }
 
     .pdp .product-tags__avail {
+        display: none;
+    }
+
+    .site-header__meta .product-tags__avail {
         display: none;
     }
 

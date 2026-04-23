@@ -1,0 +1,99 @@
+PAGE: Brand Identity
+PATH: /brand-identity
+
+[meta]
+title: Brand identity, Milos Dronjak
+description: Brand identity and implementation rules for typography, spacing, color, motion, components, and responsive behavior on milosdronjak.me.
+og_title: Brand identity, Milos Dronjak
+og_description: Brand rules and styling guidelines used across the website.
+twitter_title: Brand identity, Milos Dronjak
+twitter_description: Brand rules and styling guidelines used across the website.
+
+[global_ui]
+skip_link: Skip to content
+menu_button_aria_label: Open menu
+brand_link_aria_label: Milos Dronjak home
+brand_text: milosdronjak.me
+
+[header]
+nav_link_1: home
+nav_link_2: how-I-work
+nav_link_3: brand-identity
+header_label: SOURCE OF TRUTH
+
+[hero]
+title: Brand identity and styling rules
+intro: Use rule IDs below when requesting changes (example: "update BR-03 to 1rem"). Each rule includes what to use and where it currently applies.
+
+[rules]
+rule_01_id: BR-01
+rule_01_title: Color tokens only
+rule_01_desc: Always use token colors from `:root` in `css/styles.css`.
+rule_01_item_1: Primary text: `--ink`
+rule_01_item_2: Main accent: `--orange`, `--orange-dark`, `--orange-darker`
+rule_01_item_3: Soft section background: `--blush`
+
+rule_02_id: BR-02
+rule_02_title: Typography hierarchy
+rule_02_desc: Headings use Fraunces. Body/UI text uses Montserrat.
+rule_02_item_1: Section headings: `u-type-h2`
+rule_02_item_2: Body copy: `u-type-body` or tokenized component text
+rule_02_item_3: Emphasis: semibold lead + muted body
+
+rule_03_id: BR-03
+rule_03_title: Body text scale
+rule_03_desc: Body copy is consistent across pages.
+rule_03_item_1: Desktop: `0.92rem`
+rule_03_item_2: Mobile: `0.82rem`
+rule_03_item_3: Prefer tokens over hardcoded px
+
+rule_04_id: BR-04
+rule_04_title: Container alignment
+rule_04_desc: All section content should align to the same shell.
+rule_04_item_1: Use `max-width: var(--max)`
+rule_04_item_2: Horizontal gutter: `padding: 0 var(--space)`
+rule_04_item_3: Use `box-sizing: border-box; width: 100%` for inner wrappers
+
+rule_05_id: BR-05
+rule_05_title: Buttons and CTA language
+rule_05_desc: Reuse shared button styles (`btn` modifiers) and keep CTA copy concise.
+rule_05_item_1: Primary CTA: `btn btn--primary`
+rule_05_item_2: Secondary CTA: `btn btn--ghost`
+rule_05_item_3: Avoid one-off button CSS when a shared modifier exists
+
+rule_06_id: BR-06
+rule_06_title: Animation style
+rule_06_desc: Use soft fade/translate transitions and section reveal choreography.
+rule_06_item_1: Reveal class pattern: `.reveal`, `.reveal--up`, `.is-revealed`
+rule_06_item_2: Copy switches: `is-updating` + `copyFade` timing
+rule_06_item_3: Respect reduced motion in CSS and JS
+
+rule_07_id: BR-07
+rule_07_title: Section content pattern
+rule_07_desc: When a section needs explanation text, use lead/sub text structure.
+rule_07_item_1: Lead line: semibold (`strong`)
+rule_07_item_2: Supporting paragraph: muted text (`span`/body)
+rule_07_item_3: Used in homepage Description and tools-related sections
+
+rule_08_id: BR-08
+rule_08_title: Breakpoints
+rule_08_desc: Use the two shared breakpoints unless there is a specific reason.
+rule_08_item_1: Tablet: `960px`
+rule_08_item_2: Mobile: `640px`
+rule_08_item_3: Mobile nav behavior follows `ui.breakpoints.navMobile` from `MilosSite`
+
+[footer]
+contact_title: Contact
+contact_label_1: Email
+contact_value_1: hello@milosdronjak.me
+contact_label_2: Phone
+contact_value_2: +31639293114
+contact_label_3: WhatsApp
+contact_value_3: Open chat
+contact_label_4: LinkedIn
+contact_value_4: mdwebdev
+pages_title: Pages
+footer_nav_link_1: home
+footer_nav_link_2: how-I-work
+footer_nav_link_3: brand-identity
+copyright: © 2026 Miloš Dronjak · milosdronjak.me

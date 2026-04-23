@@ -1,87 +1,84 @@
 # Animation & interaction rules — milosdronjak.me
 
-Runtime constants and helpers live in **`js/site-system.js`** on the global **`window.MilosSite`**.
+Shared timing constants and helpers live in **`js/site-system.js`** on **`window.MilosSite`**.
 
 ## Script load order
 
-1. **`js/site-system.js`** (defines `MilosSite`)  
-2. **`js/home.js`** (or future page scripts) — read `MilosSite` with safe fallbacks if the file is missing
+1. `js/site-system.js`
+2. Page script (`js/home.js`, `js/how-I-work.js`, etc.)
 
-## `MilosSite.motion`
+Page scripts must read `MilosSite` with safe fallbacks.
 
-### `motion.ms` (JavaScript timings)
+## `MilosSite.motion.ms`
 
-| Key | Default (ms) | Used for |
-|-----|----------------|----------|
-| `copyFade` | 280 | Variant copy cross-fade (`home.js`) |
-| `chainStart` | 180 | Delay before first PDP chain reveal |
-| `chainStagger` | 105 | Stagger between chained `data-reveal-chain` items |
+| Key | Default | Usage |
+|-----|---------|-------|
+| `copyFade` | `280` | Copy/panel/list fade transition timing |
+| `chainStart` | `180` | Start delay for chained reveals |
+| `chainStagger` | `105` | Chained reveal stagger |
 
-Change these once; **`home.js`** reads them via `MilosSite.motion.ms`.
+## Shared CSS motion contract
 
-### `motion.css` (documentation mirror of motion-heavy CSS)
+Keep these in sync with behavior in `styles.css`:
 
-Documents typical durations that **must stay in sync** with `css/styles.css` rules:
+- `.reveal` transitions (`opacity` + `transform`)
+- `.variant-copy` transitions (`is-updating`)
+- menu icon rotate transition
+- backlog ticket transitions
 
-- `revealOpacityTransformMs` — `.reveal` opacity/transform (0.6s)
-- `variantOpacityTransformMs` — `.variant-copy` (0.28s)
-- `menuIconRotateMs` — `.site-header__menu-icon` transition
+General interactive transitions remain ~300ms in component styles.
 
-General UI hover/focus transitions (links/buttons/cards) are standardized in `css/styles.css` at **300ms** and are not JS-driven.
+## Scroll reveal behavior
 
-If you change CSS transition length, update **`MilosSite.motion.css`** in `js/site-system.js` and any `setTimeout` that depends on it.
+Used on homepage and `how-I-work`:
 
-### `motion.easing`
+- Section wrapper: `data-reveal-section`
+- Animated children: `data-reveal-scroll`
+- Reveal trigger: section passes ~60% viewport progress
+- Grouped reveal uses stagger; ungrouped elements can use observer fallback
 
-String tokens for `transition-timing-function` when setting styles from JS (optional). CSS today uses the same curves in `css/styles.css` (e.g. reveal `cubic-bezier(0.22, 1, 0.36, 1)`).
+## Homepage (`js/home.js`)
 
-### Scroll reveal trigger rules
+Current patterns:
 
-Homepage scroll reveals now support section-level progress logic:
+1. **Focus pills**
+   - Hero/description copy updates with `copyFade`
+   - Uses `variant-copy` + `is-updating`
+2. **Description lead/body rendering**
+   - Variant description is rendered as `<strong>` lead + `<span>` body
+3. **Chained hero reveals**
+   - `chainStart + i * chainStagger`
+4. **Mobile nav drawer**
+   - `matchMedia(ui.breakpoints.navMobile)`, close on outside click/Escape
 
-- Sections marked with `data-reveal-section`
-- Child items marked with `data-reveal-scroll`
-- Reveal starts once viewer has passed roughly **60%** of the section height
-- Child elements reveal individually with a small stagger
+## How-I-work (`js/how-I-work.js`)
 
-Ungrouped `data-reveal-scroll` elements still fall back to `IntersectionObserver`.
+Current patterns:
 
-### `motion.intersectionObserver`
+1. **Tool tab switching**
+   - Panel container remains stable
+   - Only `.philosophy-list` elements animate on option changes (`is-updating`)
+2. **Backlog ticket hover interaction**
+   - CTA hover toggles `.backlog-diagnostic.is-hovered`
+   - Tickets reorder/stack and show checkmarks
+   - Right-side stacking uses JS-computed `left` values for smooth interpolation
+3. **Backlog connector lines**
+   - Connector coordinates are recalculated on resize and hover state changes
+4. **Mobile behavior**
+   - Ticket scene hidden at phone breakpoint in section-specific CSS
 
-| Key | Value | Used for |
-|-----|--------|----------|
-| `threshold` | `0.06` | Fallback scroll reveals (ungrouped elements) |
-| `rootMargin` | `0px 0px 10% 0px` | Trigger slightly before entering viewport |
+## Reduced motion
 
-**`home.js`** should use `MilosSite.motion.intersectionObserver` when creating `IntersectionObserver` instances.
+Always branch on `MilosSite.prefersReducedMotion()` for JS-driven motion.
+When reduced motion is on:
 
-## `MilosSite.ui`
+- apply final state immediately
+- avoid stagger/setTimeout choreography where possible
+- mirror CSS reduced-motion rules
 
-| Key | Value |
-|-----|--------|
-| `breakpoints.navMobile` | `(max-width: 640px)` |
+## Adding/changing an animation
 
-Use for `matchMedia` in menus or mobile-only behaviour so the string is not duplicated.
-
-## `MilosSite.prefersReducedMotion()`
-
-Returns `true` when `prefers-reduced-motion: reduce` is active. Use before:
-
-- staggered timeouts  
-- scroll-driven class toggles that animate  
-
-If `true`, prefer instant state (e.g. add `is-revealed` immediately), matching CSS `@media (prefers-reduced-motion: reduce)`.
-
-## Patterns in `home.js`
-
-1. **Variant pills** — `setCopyUpdating` + timeout `motion.ms.copyFade` + double `requestAnimationFrame` before clearing updating state  
-2. **Chain reveal** — `setTimeout(..., chainStart + i * chainStagger)`  
-3. **Scroll reveal** — one `IntersectionObserver` per observed set; unobserve after reveal  
-4. **Nav drawer** — `matchMedia(ui.breakpoints.navMobile)`, click outside, Escape, close on resize when leaving mobile
-
-## Adding a new animation
-
-1. Add or reuse a duration in **`MilosSite.motion.ms`** (if JS-driven) and document the CSS duration in **`motion.css`**  
-2. Add CSS under a clear class (e.g. `.my-block.is-active`) in `css/styles.css`  
-3. If motion matters for a11y, branch on **`MilosSite.prefersReducedMotion()`**  
-4. Update this file with the class name and timing
+1. Reuse/add a `motion.ms` token if JS timing is involved
+2. Implement class-based CSS state (`.is-updating`, `.is-hovered`, etc.)
+3. Add reduced-motion fallback
+4. Update this file to match actual behavior

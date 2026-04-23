@@ -1,77 +1,72 @@
 # Styling rules — milosdronjak.me
 
-Static site: global tokens live in **`css/styles.css`** (`:root`). Reusable typography and stacks live in **`css/utilities.css`**.
+Static site: global tokens and component styles live in **`css/styles.css`**. Reusable typography/layout utilities live in **`css/utilities.css`**.
 
 ## Load order
 
-1. `css/styles.css` — fonts, `:root`, layout, components, component-level responsive rules  
-2. `css/utilities.css` — `u-*` utility classes for new pages and prose
+1. `css/styles.css` — fonts, `:root` tokens, shared components, responsive rules
+2. `css/utilities.css` — `u-*` utility classes for typography/prose/spacing
+3. Optional page CSS (e.g. `css/how-I-work.css`)
 
-## Tokens (`:root` in `css/styles.css`)
+## Core tokens (`:root` in `css/styles.css`)
 
 | Token | Role |
 |--------|------|
-| `--bg`, `--ink`, `--white` | Surfaces and text |
-| `--orange`, `--orange-dark`, `--orange-darker` | Accent scale (light / default-on-dark / hover-strong) |
-| `--strawberry`, `--sky`, `--steel`, `--ice`, `--blush` | Backward-compatible aliases mapped to orange system |
-| `--muted`, `--line` | Secondary text and hairlines |
-| `--font-ui` | Montserrat — body/UI/labels/buttons |
-| `--font-display` | Fraunces — headings only (`h1`...`h6`) |
-| `--radius` | 12px — rounded rects (pills stay `999px`) |
-| `--space`, `--max` | Page gutter and shell width |
+| `--bg`, `--ink`, `--white` | Surface and text colors |
+| `--orange`, `--orange-dark`, `--orange-darker` | Accent color scale |
+| `--strawberry`, `--sky`, `--steel`, `--ice`, `--blush` | Aliases / section palette |
+| `--muted`, `--line` | Secondary text and borders |
+| `--font-ui`, `--font-display` | Montserrat / Fraunces |
+| `--radius`, `--space`, `--max` | Radius, gutters, max container |
+| `--body-text-size` | Global body text size on desktop (`0.92rem`) |
+| `--body-text-size-mobile` | Global body text size on mobile (`0.82rem`) |
+
+## Body text policy (current)
+
+- Desktop body text should use **`0.92rem`** consistently
+- Mobile body text should use a smaller consistent token (**`0.82rem`**)
+- Prefer token-based sizing (`var(--body-text-size)`) over hardcoded px/rem for body copy
 
 ## Utility classes (`css/utilities.css`)
 
-Prefix: **`u-`**. Combine with semantic HTML (`<h1 class="u-type-display">`).
+Prefix: **`u-`**.
 
 | Class | Use |
 |--------|-----|
-| `u-type-display` | Hero / page title (Fraunces 900, large; shrinks at ≤640px) |
+| `u-type-display` | Main hero/page title |
 | `u-type-h2` | Section title |
-| `u-type-h3` | Subsection / card title (UI weight) |
-| `u-type-body` | Default paragraph (sans, 16px desktop) |
-| `u-type-body-serif` | Editorial paragraph (Fraunces, same size) |
-| `u-type-body-sm` | Compact body |
-| `u-type-muted` | Muted colour (pair with a type class) |
-| `u-text-accent` | Dark orange text on light backgrounds |
-| `u-text-accent-light` | Light orange text on dark backgrounds |
+| `u-type-h3` | Subsection title |
+| `u-type-body` | Body paragraph (`0.92rem` desktop) |
+| `u-type-body-serif` | Alternative body paragraph style |
+| `u-type-body-sm` | Compact body text |
 | `u-type-ui` | Uppercase micro-label |
+| `u-text-accent` / `u-text-accent-light` | Accent text color helpers |
 | `u-fw-medium` … `u-fw-heavy` | Weight helpers |
-| `u-text-strong` | Semibold inline; `strong` inside `u-type-body*` is semibold |
-| `u-italic` | Italic (e.g. quotes) |
-| `u-link-accent` | Link utility: dark orange default, darker orange hover/focus |
-| `u-link-accent-light` | Link utility for dark sections: light orange default, darker orange hover/focus |
-| `u-prose` | Readable max-width; use `u-prose > * + *` spacing via nested rule |
-| `u-stack-sm` / `u-stack-md` / `u-stack-lg` | Vertical rhythm between direct children |
+| `u-italic` | Italic helper |
+| `u-link-accent` / `u-link-accent-light` | Accent link patterns |
+| `u-prose`, `u-stack-sm/md/lg` | Readability and vertical rhythm helpers |
 
-### Type scale variables (utilities `:root`)
+### Utility type scale vars
 
-`--u-type-display`, `--u-type-display-sm`, `--u-type-h2`, `--u-type-h2-sm`, etc. — tweak once for all pages using these utilities. **`--u-type-body-mobile`** (13px) and **`--u-type-h3-sm`** / **`--u-type-ui-sm`** back the phone scale. **`--u-interactive-ms`** controls utility link transition speed (currently 300ms).
+- `--u-type-body: 0.92rem`
+- `--u-type-body-mobile: 0.82rem`
+- `--u-type-display*`, `--u-type-h2*`, `--u-type-h3*`, `--u-type-ui*` remain the heading/UI scale controls
 
-## Responsive utilities (`css/utilities.css`)
+## Responsive rules
 
-Aligned with **`css/styles.css`** breakpoints **960px** (tablet / stacked layouts) and **640px** (phone).
+Breakpoints are standardized:
 
-| Breakpoint | What changes |
-|-------------|----------------|
-| **≤960px** | `.u-prose` uses `max-width: 100%` so long copy fits single-column shells. |
-| **≤640px** | `.u-type-display` / `.u-type-h2` use the small scale vars; `.u-type-h3` steps down; `.u-type-body`, `.u-type-body-serif`, `.u-type-body-sm` use **`13px`** (same as `body` / description on the homepage); `.u-type-ui` tightens slightly; `.u-prose` is uncapped width with slightly tighter paragraph and stack gaps. |
+- **`@media (max-width: 960px)`**: layout stacks / tablet adjustments
+- **`@media (max-width: 640px)`**: phone typography and compact spacing
 
-Weight helpers (`.u-fw-*`) are unchanged at all breakpoints.
+At ≤640px, body copy should resolve to the mobile body token and remain consistent across sections/pages.
 
-## Existing components
+## Page-specific notes
 
-Home PDP sections use **named classes** (`.product-title`, `.description-block__body`, …), not only utilities. For **new** pages, prefer utilities + a thin page wrapper; or align new components with the same token values.
-
-## Buttons
-
-Button look is component-level (`.btn`, `.btn--primary`, …) in `css/styles.css`. Do not duplicate button CSS in utilities; use existing modifiers.
-
-### Accent interaction rule
-
-- On light backgrounds: default **dark orange**, hover/focus **darker orange**
-- On dark backgrounds: default **light orange**, hover/focus **dark orange**
+- `how-I-work` uses `css/how-I-work.css` + `js/how-I-work.js`
+- Homepage uses `js/home.js` variant switching and component-level classes
+- Keep section containers aligned using the shared container pattern (`max-width: var(--max)`, horizontal padding via `var(--space)`)
 
 ## Reduced motion
 
-`prefers-reduced-motion: reduce` is handled in `css/styles.css` for `.reveal`, `.variant-copy`, and the menu icon. New CSS transitions should repeat that pattern (see `docs/animations.md`).
+`prefers-reduced-motion` is respected in shared transitions (`reveal`, variant copy, menu/ticket effects). New motion styles should include a reduced-motion fallback; see `docs/animations.md`.
