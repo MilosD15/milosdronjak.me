@@ -1,0 +1,135 @@
+PAGE: How I Work
+PATH: /how-I-work
+
+[meta]
+title: How I work, Milos Dronjak
+description: I remove frustration first, then improve systems. How I work across Shopify and automation, tools, and the real client problems I solve.
+og_title: How I work, Milos Dronjak
+og_description: How I approach Shopify and automation work, the tools I use, and the problems I solve.
+twitter_title: How I work, Milos Dronjak
+twitter_description: How I approach Shopify and automation work, the tools I use, and the problems I solve.
+
+[global_ui]
+skip_link: Skip to content
+menu_button_aria_label: Open menu
+brand_link_aria_label: Milos Dronjak home
+
+[header]
+nav_link_1: home
+nav_link_2: how-I-work
+nav_link_3: case
+header_availability: Available Now
+header_cta: Contact me
+
+[hero]
+title: I'm not here to ship features. I'm here to remove frustration.
+paragraph_1: Every Shopify store has people behind it. Someone in operations who manually exports orders every morning. Someone in finance cross-checking numbers between two systems that should talk to each other. Someone on the team who knows exactly what's broken but has nobody to hand the ticket to.
+paragraph_2: That's where I start. Not with the tech stack, with the frustration. If I can find the thing that costs someone an hour a day and make it disappear, everything downstream gets better: the person, the team, the business. In that order.
+hero_image_alt: Milos working with clients
+
+[approach]
+section_title: How I approach the work
+item_1_title: I work with what you already have.
+item_1_body: Before introducing anything new, I look at the tools your clients are already paying for, the apps, the platforms, the subscriptions, and ask how far we can get with those. New monthly costs only come in when there's no other way.
+item_2_title: Shopify is where most of this happens.
+item_2_body: Every store I work on has a different story, a different pain, a different team. That variety is exactly why I like it. You don't solve the same problem twice.
+item_3_title: I've been doing this for real clients, on live stores and websites, for years.
+item_3_body: Wonderful Dental. Zoe Rowyn Bridal. E-Flight Academy. MKB Digiwerkplaats. Match-IT. Not experiments, production, with real people on the other end waiting for it to work.
+
+[tools]
+section_title: The tools I use
+tab_1: Automations
+tab_2: Shopify
+tab_3: Custom solutions
+
+[tools_automations]
+stack_title: Stack
+stack_item_1_name: Shopify Flow
+stack_item_1_desc: Native triggers, tag-based segmentation, order workflows, automation that stays inside Shopify without a third-party dependency
+stack_item_2_name: Zapier
+stack_item_2_desc: Multi-step flows, custom code steps, cross-app integrations, built around the tools your client already pays for
+stack_item_3_name: Make.com
+stack_item_3_desc: Countdown timers, custom HTTP integrations, routers and iterators, for branching logic Zapier can't handle cleanly
+stack_item_4_name: Custom code automations
+stack_item_4_desc: When no-code options run out, custom integrations and app development to connect systems the existing stack can't bridge
+solve_title: What I solve
+solve_item_1: Klaviyo flows that broke after a tag or metafield change
+solve_item_2: ShipStation not receiving correct order data from Shopify
+solve_item_3: Shopify Flow triggers firing at the wrong time, or not at all
+solve_item_4: Two fulfilment apps that need to route orders without stepping on each other
+solve_item_5: Manual ops work that should have been automated months ago
+
+[tools_shopify]
+stack_title: Stack
+stack_item_1_name: Theme customization
+stack_item_1_desc: Custom sections, Liquid templates, metafield-driven storefronts, parallax and scroll animations, page transitions, custom loaders
+stack_item_2_name: Shopify app integrations
+stack_item_2_desc: Configuration and integration of Judge.me, Klaviyo, Appstle Subscriptions, Appstle Loyalty, Checkout Blocks, and more, wired together as a system
+stack_item_3_name: Custom Shopify app development
+stack_item_3_desc: Purpose-built apps for specialized businesses, when off-the-shelf solutions don't fit the store logic
+stack_item_4_name: Performance optimization
+stack_item_4_desc: Image optimization, codebase cleanup, Core Web Vitals, stores that load the way they should
+stack_item_5_name: Checkout customization
+stack_item_5_desc: Shopify Plus checkout audits and UX improvements, reducing drop-off where it costs the most
+solve_title: What I solve
+solve_item_1: Review apps like Judge.me going silent after a platform update
+solve_item_2: Smile.io or Appstle loyalty logic breaking on edge cases nobody mapped
+solve_item_3: Theme performance issues that have been on the list for months
+solve_item_4: Custom cart errors and checkout friction nobody has had time to debug
+solve_item_5: Subscription or loyalty app configurations that don't match the store's actual business logic
+
+[tools_custom]
+stack_title: Stack
+stack_item_1_name: JavaScript / TypeScript
+stack_item_1_desc: Core language for everything, from Shopify theme scripting to full front-end applications
+stack_item_2_name: React.js / Next.js
+stack_item_2_desc: Responsive, performant web apps built end-to-end, used on MKB Digiwerkplaats and Match IT
+stack_item_3_name: Tailwind CSS / SCSS
+stack_item_3_desc: Consistent, polished UI styling, utility-first for speed, SCSS for Shopify theme architecture
+stack_item_4_name: TinaCMS
+stack_item_4_desc: Content management setup and customization, so non-technical teams can own content updates without developer involvement
+stack_item_5_name: HTML / CSS
+stack_item_5_desc: The foundation, cross-browser compatible, accessible, built to last without framework dependency
+solve_title: What I solve
+solve_item_1: Websites that need to move fast but still look considered, Next.js with Tailwind
+solve_item_2: Content-heavy sites where the team needs to manage updates without touching code
+solve_item_3: Complex signup or booking flows that off-the-shelf tools can't handle
+solve_item_4: Front-end codebases that have grown messy, refactoring, PR reviews, code quality
+
+[closing]
+not_line: What I'm not, is the dev who needs a senior to explain the ticket twice.
+am_line: What I am, is the dev who comes back the next day with it fixed, and can tell you exactly what broke and why.
+
+[backlog_diagnostic]
+title: Send me the tickets that keep sitting there.
+body: Send me three tickets that have been sitting for over a month. I'll tell you which one I can solve this week, which ones take two weeks, and which I'd leave for someone else - and why.
+primary_cta: + Book a backlog audit
+support_line: YOU GOT NOTHING TO LOSE.
+ticket_1: Klaviyo sync broken
+ticket_2: Flow trigger not firing
+ticket_3: Cart errors on edge cases
+ticket_4: GA4 events missing
+ticket_5: App conflicts on update
+ticket_6: Manual order exports
+
+[footer]
+contact_title: Contact
+contact_label_1: Email
+contact_value_1: hello@milosdronjak.me
+contact_label_2: Phone
+contact_value_2: +31639293114
+contact_label_3: WhatsApp
+contact_value_3: Open chat
+contact_label_4: LinkedIn
+contact_value_4: mdwebdev
+contact_label_5: GitHub
+contact_value_5: MilosD15
+contact_label_6: Upwork
+contact_value_6: Milos D.
+pages_title: Pages
+footer_nav_link_1: home
+footer_nav_link_2: how-I-work
+footer_nav_link_3: case
+footer_nav_link_4: contact
+copyright: © 2026 Miloš Dronjak · milosdronjak.me
+footer_availability: Available Now

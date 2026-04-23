@@ -3,167 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miloš Dronjak - UX Engineer & Web Developer</title>
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="img/favicon.png">
-    <link rel="stylesheet" href="styles.css">
+    <title>Miloš Dronjak, Shopify dev &amp; automation specialist</title>
+    <meta name="description" content="I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.">
+    <link rel="canonical" href="https://milosdronjak.me/">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/logo-white_100-only_MD-rect.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://milosdronjak.me/">
+    <meta property="og:title" content="Miloš Dronjak, Shopify dev &amp; automation specialist">
+    <meta property="og:description" content="I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.">
+    <meta property="og:image" content="https://milosdronjak.me/img/logo-white_100-only_MD-rect.png">
+    <meta property="og:image:width" content="960">
+    <meta property="og:image:height" content="960">
+    <meta property="og:image:alt" content="Miloš Dronjak logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miloš Dronjak, Shopify dev &amp; automation specialist">
+    <meta name="twitter:description" content="I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.">
+    <meta name="twitter:image" content="https://milosdronjak.me/img/logo-white_100-only_MD-rect.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/utilities.css">
 </head>
 <body>
-    <!-- Background decorative ellipses -->
-    <div class="ellipses-container">
-        <div class="ellipse ellipse-1"></div>
-        <div class="ellipse ellipse-2"></div>
-        <div class="ellipse ellipse-3"></div>
-        <div class="ellipse ellipse-4"></div>
-        <div class="ellipse ellipse-5"></div>
-        <div class="ellipse ellipse-6"></div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="variant-live" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <p class="location-text">📍Based in Rotterdam (remote work preferred)</p>
-            <div class="header-cta">
-                <p>Say hi on</p>
-                <a href="https://www.linkedin.com/in/mdwebdev/" class="btn btn-linkedin" target="_blank">
-                    LinkedIn
-                </a>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <button type="button" class="site-header__menu-btn" aria-expanded="false" aria-controls="site-nav-primary" aria-label="Open menu">
+                <img class="site-header__menu-icon" src="img/burger%20icon.svg" alt="" width="26" height="26" decoding="async">
+            </button>
+            <a class="site-header__brand" href="/" aria-label="Milos Dronjak home">
+                <svg class="site-header__brand-logo" width="937" height="598" viewBox="0 0 937 598" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <g clip-path="url(#header-logo-clip)">
+                        <rect width="937" height="598" rx="70" fill="white"/>
+                        <rect x="558.059" y="142.874" width="57.3886" height="285.407" transform="rotate(11.2327 558.059 142.874)" fill="white"/>
+                        <path d="M444.5 468L514.5 118H656C691.667 118 722.167 124 747.5 136C772.833 147.667 792.167 164.333 805.5 186C819.167 207.667 826 233.167 826 262.5C826 293.5 820.667 321.667 810 347C799.667 372.333 784.833 394 765.5 412C746.5 429.667 723.667 443.5 697 453.5C670.333 463.167 640.667 468 608 468H444.5ZM520.5 413H610C641.333 413 668.167 406.667 690.5 394C713.167 381 730.5 363.5 742.5 341.5C754.5 319.5 760.5 294.5 760.5 266.5C760.5 247.5 756.333 231 748 217C739.667 203 727.167 192.167 710.5 184.5C694.167 176.833 673.667 173 649 173H568.5L520.5 413Z" fill="#D57B25"/>
+                        <rect x="490.091" y="126.451" width="26" height="18" transform="rotate(-51.8806 490.091 126.451)" fill="white"/>
+                        <rect x="501.25" y="488.692" width="321.977" height="78.2999" transform="rotate(-78.6609 501.25 488.692)" fill="white"/>
+                        <rect x="579" y="455" width="21" height="14" fill="white"/>
+                        <path d="M391 328.5C444.5 378.179 536 413 600.5 413V468C461.5 465 411 385.5 391 328.5Z" fill="url(#header-logo-gradient)"/>
+                        <path d="M122.5 468L192.5 118H245.5L347.5 374.5L320 374L519.5 118H575.5L505.5 468H444L494.5 213L509 213.5L340 428H311L222.5 213L235 214.5L184.5 468H122.5Z" fill="#D57B25"/>
+                        <path d="M564.56 173H569.06V176H564.56V173Z" fill="white"/>
+                        <rect x="485.165" y="263" width="59.9899" height="192.572" transform="rotate(11.2902 485.165 263)" fill="#D57B25"/>
+                    </g>
+                    <defs>
+                        <linearGradient id="header-logo-gradient" x1="601.8" y1="438.375" x2="389.059" y2="374.652" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#D57B25"/>
+                            <stop offset="0.93" stop-color="white"/>
+                        </linearGradient>
+                        <clipPath id="header-logo-clip">
+                            <rect width="937" height="598" rx="70" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+            </a>
+            <nav id="site-nav-primary" class="site-nav" aria-label="Primary">
+                <a class="is-active" href="/">home</a>
+                <a href="/how-I-work">how-I-work</a>
+                <a href="/cases/wonderful-dental">case</a>
+            </nav>
+            <div class="site-header__meta">
+                <span class="product-tags__avail"><span class="live-dot live-dot--avail" aria-hidden="true"></span>Available Now</span>
+                <a class="btn btn--audit" href="/contact">Contact me</a>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-image">
-                    <img src="img/milosdronjak-photo.png" alt="Miloš Dronjak">
-                </div>
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        I'm Miloš Dronjak,<br>
-                        UX Engineer & Web Developer.
-                    </h1>
-                    <p class="hero-description">
-                        Web design?<br>
-                        Web development?<br>
-                        AI integrations & automations?<br>
-                        <br>
-                        Yes - thoughtfully researched, designed and built.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn btn-about">About me</a>
-                        <a href="#contact" class="btn btn-contact">Contact me</a>
+    <main id="main">
+        <section class="pdp" aria-labelledby="product-headline">
+            <div class="pdp__grid" id="pdp-chain">
+                <div class="pdp__gallery reveal reveal--up" data-reveal-chain>
+                    <div class="gallery-main" id="gallery-main" data-view="portrait">
+                        <img class="gallery-main__img" src="img/my-pic-newest.jpeg" alt="Miloš Dronjak" width="960" height="960" decoding="async">
                     </div>
-                    <a href="#about" class="scrolldown" style="--color: hsl(0, 0%, 45%);">
-                        <div class="chevrons">
-                            <div class="chevrondown"></div>
-                            <div class="chevrondown"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="about">
-            <div class="about-content">
-                <div class="about-header">
-                    <h2 class="section-title">About me & my work</h2>
-                    <div class="about-linkedin">
-                        <p>Read more on</p>
-                        <a href="https://www.linkedin.com/in/mdwebdev/" class="btn btn-linkedin" target="_blank">
-                            LinkedIn
-                        </a>
+                    <!--
+                    <div class="gallery-meta">
+                        <span class="gallery-meta__label">Pages</span>
                     </div>
+                    <nav class="gallery-thumbs" aria-label="Site pages">
+                        <a class="gallery-thumb" href="/how-I-work">How I work</a>
+                        <a class="gallery-thumb" href="/case">Case</a>
+                        <a class="gallery-thumb" href="/contact">Contact</a>
+                    </nav>
+                    -->
                 </div>
 
-                <div class="resume-section">
-                    <p class="section-subtitle">Everything you need to know</p>
-                    <div class="resume-buttons">
-                        <a href="PDFs/Milos Dronjak - Web Developer resume.pdf" class="btn btn-resume" target="_blank">
-                            <b>Web Developer resume</b>
-                        </a>
-                        <a href="PDFs/Milos Dronjak - UX Engineer resume.pdf" class="btn btn-resume" target="_blank">
-                            <b>UX Engineer resume</b>
-                        </a>
+                <div class="pdp__detail">
+                    <div class="product-tags reveal reveal--up" data-reveal-chain>
+                        <span class="product-tags__lead">Shopify dev &amp; automation specialist</span>
                     </div>
-                    <div class="resume-buttons-single">
-                        <a href="PDFs/Milos Dronjak - UX Design portfolio.pdf" class="btn btn-resume" target="_blank">
-                            <b>UX Engineer portfolio</b>
-                        </a>
+                    <div class="product-headline-wrap reveal reveal--up" data-reveal-chain>
+                        <h1 class="product-title" id="product-headline">The only Shopify dev whose first day <span class="u-italic u-fw-heavy u-text-accent">isn&apos;t your first problem</span>.</h1>
                     </div>
-                </div>
+                    <div id="variant-copy-hero" class="variant-copy variant-copy--hero reveal reveal--up" data-reveal-chain>
+                        <p class="product-lede" id="product-subhead">I clear the automations your seniors keep leaving behind, Zapier, Make, Shopify Flow, and custom code when the no-code options run out.</p>
+                    </div>
 
-                <div class="projects-section">
-                    <p class="section-subtitle">Some websites that I built</p>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                                <img src="img/wonderfuldental-thumbnail.png" alt="Wonderful Dental">
-                            </div>
-                            <h3 class="project-title">Wonderful Dental</h3>
-                            <a href="https://wonderfuldental.com/" class="btn btn-view" target="_blank">View</a>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                                <img src="img/mkbdigiwerkplaats-thumbnail.png" alt="MKB Digiwerkplaats">
-                            </div>
-                            <h3 class="project-title">MKB Digiwerkplaats</h3>
-                            <a href="https://mkbdigiwerkplaats.nl/" class="btn btn-view" target="_blank">View</a>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-thumbnail">
-                                <img src="img/codebrush-thumbnail.png" alt="CodeBrush">
-                            </div>
-                            <h3 class="project-title">CodeBrush</h3>
-                            <a href="https://codebrush.netlify.app/" class="btn btn-view" target="_blank">View</a>
+                    <div class="variant-block reveal reveal--up" data-reveal-chain>
+                        <p class="variant-label">Focus</p>
+                        <div class="pill-row" role="group" aria-label="Focus">
+                            <button type="button" class="pill" data-focus-btn data-value="automations" aria-pressed="true">Automations</button>
+                            <button type="button" class="pill" data-focus-btn data-value="storefront" aria-pressed="false">Storefront</button>
+                            <button type="button" class="pill" data-focus-btn data-value="both" aria-pressed="false">Both</button>
                         </div>
                     </div>
-                </div>
 
-                <a href="#contact" class="scrolldown" style="--color: hsl(0, 0%, 45%);">
-                    <div class="chevrons">
-                        <div class="chevrondown"></div>
-                        <div class="chevrondown"></div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="contact-content">
-                <h2 class="section-title">Contact me</h2>
-                <div class="contact-section">
-                    <p class="section-subtitle">Get in touch</p>
-                    <div class="contact-buttons">
-                        <a href="https://www.linkedin.com/in/mdwebdev/" class="btn btn-contact-linkedin" target="_blank">
-                            LinkedIn
+                    <div class="cta-row reveal reveal--up" data-reveal-chain>
+                        <a class="btn btn--primary" href="/contact">
+                            <span class="btn--primary__left">+ Book a backlog audit</span>
+                            <span class="btn--primary__right">Reply within 24 hours</span>
                         </a>
-                        <a href="mailto:milosdronjak47@gmail.com" class="btn btn-contact-email">
-                            Email (milosdronjak47@gmail.com)
-                        </a>
-                    </div>
-                </div>
-                <div class="social-section">
-                    <p class="section-subtitle">Find me elsewhere</p>
-                    <div class="social-buttons">
-                        <a href="https://github.com/milosD15" class="btn btn-github" target="_blank">
-                            GitHub
-                        </a>
-                        <a href="https://www.upwork.com/freelancers/~016c2ec76f60c85c55" class="btn btn-upwork" target="_blank">
-                            Upwork
-                        </a>
+                        <a class="btn btn--ghost" href="/cases/wonderful-dental">Read the Wonderful Dental story</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© Copyright 2026 | <a href="#" class="footer-link">milosdronjak.me</a></p>
-        </footer>
-    </div>
+        <section class="description-block" id="automations" aria-label="Description" data-reveal-section>
+            <div class="description-block__grid">
+                <div class="description-block__body reveal reveal--up" data-reveal-scroll>
+                    <div id="variant-copy-desc" class="variant-copy variant-copy--desc">
+                        <p id="desc-variant" class="description-block__item"><strong>Every Shopify agency has the same quiet backlog.</strong><span>Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for, and I make it work the way it was supposed to.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="reviews" aria-labelledby="reviews-heading" data-reveal-section>
+            <div class="reviews__inner">
+                <div class="reviews__head reveal reveal--up" data-reveal-scroll>
+                    <div>
+                        <h2 class="reviews__title u-type-h2" id="reviews-heading">Verified reviews</h2>
+                    </div>
+                </div>
+                <div class="reviews__grid">
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“He delivered everything we requested with high quality and fast turnaround. Our requirements were difficult, and he did an excellent job completing the task creatively. We will certainly be happy to hire him again.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/joseph-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Joseph Epstein</span>
+                            <span class="review-card__role">CEO</span>
+                            <a class="review-card__company" href="https://wonderfuldental.com/" rel="noopener noreferrer" target="_blank">Wonderful Dental</a>
+                        </div>
+                    </figcaption>
+                    </figure>
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“Instead of simply executing the brief, Miloš takes the time to flag design issues and alignment inconsistencies. His willingness to question, reflect, and apply critical thinking ultimately improves the final outcome.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/corina-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Corina Culeva</span>
+                            <span class="review-card__role">Founder</span>
+                            <a class="review-card__company" href="https://zoerowyn.com/" rel="noopener noreferrer" target="_blank">Zoe Rowyn Bridal</a>
+                        </div>
+                    </figcaption>
+                    </figure>
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“Miloš is truly a rare gem. A real jack of all trades, UX, front-end, back-end, he is proficient in all of those. The speed in which he learns new things and gains deep understanding is something I don't see very often.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/wouter-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Wouter van den Heuvel</span>
+                            <span class="review-card__role">Tech Lead</span>
+                            <a class="review-card__company" href="https://newdesigners.agency/" rel="noopener noreferrer" target="_blank">New Designers</a>
+                        </div>
+                    </figcaption>
+                    </figure>
+                    <figure class="review-card reveal reveal--up" data-reveal-scroll>
+                    <p class="stars review-card__stars" aria-hidden="true">★★★★★</p>
+                    <blockquote>
+                        <p>“Miloš made incredible progress in both project management and coding, leading key aspects of projects with confidence. His ability to break down complex problems and push forward, even when things got rough, was truly impressive.”</p>
+                    </blockquote>
+                    <figcaption class="review-card__byline">
+                        <img class="review-card__photo" src="img/reviewer-images/andreas-pic.jpg" alt="" width="56" height="56" decoding="async">
+                        <div class="review-card__meta">
+                            <span class="review-card__name">Andreas Kruszakin-Liboska</span>
+                            <span class="review-card__role">Art Director</span>
+                            <a class="review-card__company" href="https://newdesigners.agency/" rel="noopener noreferrer" target="_blank">New Designers</a>
+                        </div>
+                    </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="teaser-strip teaser-strip--wd" aria-labelledby="wd-teaser-heading" data-reveal-section>
+            <div class="teaser-strip__inner">
+                <div class="teaser-strip__layout">
+                    <div class="teaser-strip__col teaser-strip__col--title reveal reveal--up" data-reveal-scroll>
+                        <h2 class="teaser-strip__title u-type-h2" id="wd-teaser-heading">Want to know how a hero animation turned into a <span class="teaser-strip__title-accent">3.5-year collaboration</span>?</h2>
+                    </div>
+                    <div class="teaser-strip__col teaser-strip__col--content">
+                        <aside class="teaser-strip__extract reveal reveal--up" aria-label="Wonderful Dental case summary" data-reveal-scroll>
+                            <div class="teaser-strip__extract-grid">
+                                <div class="teaser-strip__extract-body">
+                                    <p>Wonderful Dental brought me in for a one-off hero animation in 2022. It shipped ahead of schedule, so Joseph asked if I&apos;d take a look at the rest of the store. What followed was a <strong>full Shopify Plus redesign</strong>: custom sections with parallax and scroll animations, a checkout flow audit, automated operations in Zapier and Shopify Flow, and a full speed optimization pass.</p>
+                                    <p>Three months after launch, <strong>monthly orders grew 20% and total revenue grew 45%</strong> compared to the month they hired me. Three and a half years later, we are still working together.</p>
+                                </div>
+                            </div>
+                        </aside>
+                        <a class="btn btn--ghost teaser-strip__layout-cta reveal reveal--up" href="/cases/wonderful-dental" data-reveal-scroll>Read the Wonderful Dental story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact" data-reveal-section>
+        <div class="site-footer__wrap">
+            <div class="site-footer__main">
+                <div class="site-footer__shell">
+                    <div class="site-footer__grid">
+                    <div class="site-footer__col reveal reveal--up" data-reveal-scroll>
+                        <p class="site-footer__col-label">Contact</p>
+                        <ul class="site-footer__contact-list">
+                            <li>
+                                <span class="site-footer__contact-type">Email</span>
+                                <a class="site-footer__contact-value" href="mailto:hello@milosdronjak.me">hello@milosdronjak.me</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">Phone</span>
+                                <a class="site-footer__contact-value" href="tel:+31639293114">+31639293114</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">WhatsApp</span>
+                                <a class="site-footer__contact-value" href="https://wa.me/31639293114" rel="noopener noreferrer" target="_blank">Open chat</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">LinkedIn</span>
+                                <a class="site-footer__contact-value" href="https://www.linkedin.com/in/mdwebdev" rel="noopener noreferrer" target="_blank">mdwebdev</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">GitHub</span>
+                                <a class="site-footer__contact-value" href="https://github.com/MilosD15" rel="noopener noreferrer" target="_blank">MilosD15</a>
+                            </li>
+                            <li>
+                                <span class="site-footer__contact-type">Upwork</span>
+                                <a class="site-footer__contact-value" href="https://www.upwork.com/freelancers/~016c2ec76f60c85c55" rel="noopener noreferrer" target="_blank">Milos D.</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site-footer__col reveal reveal--up" data-reveal-scroll>
+                        <p class="site-footer__col-label">Pages</p>
+                        <ul class="site-footer__nav-list">
+                            <li><a href="/">home</a></li>
+                            <li><a href="/how-I-work">how-I-work</a></li>
+                            <li><a href="/cases/wonderful-dental">case</a></li>
+                            <li><a href="/#contact">contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="site-footer__bottom reveal reveal--up" data-reveal-scroll>
+                        <p class="site-footer__copy">© 2026 Miloš Dronjak · milosdronjak.me</p>
+                        <div class="site-footer__available product-tags__avail">
+                            <span class="live-dot live-dot--avail" aria-hidden="true"></span>
+                            <span>Available Now</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site-system.js" defer></script>
+    <script src="js/home.js" defer></script>
 </body>
 </html>

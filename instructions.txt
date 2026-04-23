@@ -1,0 +1,3 @@
+ - I can add the text bouncing animation for the changing of the text for different focus points the same as the claude uses for their videos and in claude animation
+ - Implement the page transitions between pages that will go like white orange black wipe, and then the page changes... Something like that
+ - 

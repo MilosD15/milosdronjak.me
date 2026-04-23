@@ -1,0 +1,90 @@
+PAGE: Home
+PATH: /
+
+[meta]
+title: Miloš Dronjak, Shopify dev & automation specialist
+description: I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.
+og_title: Miloš Dronjak, Shopify dev & automation specialist
+og_description: I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.
+twitter_title: Miloš Dronjak, Shopify dev & automation specialist
+twitter_description: I fix what nobody else wants to touch. Shopify storefronts, Zapier, Make, Shopify Flow, and custom code when no-code runs out.
+og_image_alt: Miloš Dronjak logo
+
+[global_ui]
+skip_link: Skip to content
+menu_button_aria_label: Open menu
+brand_link_aria_label: Milos Dronjak home
+
+[header]
+nav_link_1: home
+nav_link_2: how-I-work
+nav_link_3: case
+header_availability: Available Now
+header_cta: Contact me
+
+[hero]
+hero_tagline: Shopify dev & automation specialist
+title: The only Shopify dev whose first day isn't your first problem.
+subtitle: I clear the automations your seniors keep leaving behind, Zapier, Make, Shopify Flow, and custom code when the no-code options run out.
+
+[focus_toggle]
+label: Focus
+option_1: Automations
+option_2: Storefront
+option_3: Both
+
+[hero_cta]
+primary_cta_left: + Book a backlog audit
+primary_cta_right: Reply within 24 hours
+secondary_cta: Read the Wonderful Dental story
+
+[description]
+lead: Every Shopify agency has the same quiet backlog.
+body: Review apps that stopped syncing after a platform update. ShipStation not talking to Shopify the way it should. Smile.io loyalty logic breaking on edge cases nobody mapped. Klaviyo flows that broke after a tag change. They just sit there. I work with whatever stack your clients already pay for, and I make it work the way it was supposed to.
+
+[reviews]
+section_title: Verified reviews
+review_1_quote: He delivered everything we requested with high quality and fast turnaround. Our requirements were difficult, and he did an excellent job completing the task creatively. We will certainly be happy to hire him again.
+review_1_name: Joseph Epstein
+review_1_role: CEO
+review_1_company: Wonderful Dental
+review_2_quote: Instead of simply executing the brief, Miloš takes the time to flag design issues and alignment inconsistencies. His willingness to question, reflect, and apply critical thinking ultimately improves the final outcome.
+review_2_name: Corina Culeva
+review_2_role: Founder
+review_2_company: Zoe Rowyn Bridal
+review_3_quote: Miloš is truly a rare gem. A real jack of all trades, UX, front-end, back-end, he is proficient in all of those. The speed in which he learns new things and gains deep understanding is something I don't see very often.
+review_3_name: Wouter van den Heuvel
+review_3_role: Tech Lead
+review_3_company: New Designers
+review_4_quote: Miloš made incredible progress in both project management and coding, leading key aspects of projects with confidence. His ability to break down complex problems and push forward, even when things got rough, was truly impressive.
+review_4_name: Andreas Kruszakin-Liboska
+review_4_role: Art Director
+review_4_company: New Designers
+
+[case_teaser]
+title: Want to know how a hero animation turned into a 3.5-year collaboration?
+summary_paragraph_1: Wonderful Dental brought me in for a one-off hero animation in 2022. It shipped ahead of schedule, so Joseph asked if I'd take a look at the rest of the store. What followed was a full Shopify Plus redesign: custom sections with parallax and scroll animations, a checkout flow audit, automated operations in Zapier and Shopify Flow, and a full speed optimization pass.
+summary_paragraph_2: Three months after launch, monthly orders grew 20% and total revenue grew 45% compared to the month they hired me. Three and a half years later, we are still working together.
+teaser_cta: Read the Wonderful Dental story
+
+[footer]
+contact_title: Contact
+contact_label_1: Email
+contact_value_1: hello@milosdronjak.me
+contact_label_2: Phone
+contact_value_2: +31639293114
+contact_label_3: WhatsApp
+contact_value_3: Open chat
+contact_label_4: LinkedIn
+contact_value_4: mdwebdev
+contact_label_5: GitHub
+contact_value_5: MilosD15
+contact_label_6: Upwork
+contact_value_6: Milos D.
+pages_title: Pages
+footer_nav_link_1: home
+footer_nav_link_2: how-I-work
+footer_nav_link_3: case
+footer_nav_link_4: contact
+copyright: © 2026 Miloš Dronjak · milosdronjak.me
+footer_availability: Available Now

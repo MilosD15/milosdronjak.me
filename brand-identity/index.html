@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand identity, Milos Dronjak</title>
+    <meta name="description" content="Brand identity and implementation rules for typography, spacing, color, motion, components, and responsive behavior on milosdronjak.me.">
+    <link rel="canonical" href="https://milosdronjak.me/brand-identity">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/logo-white_100-only_MD-rect.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://milosdronjak.me/brand-identity">
+    <meta property="og:title" content="Brand identity, Milos Dronjak">
+    <meta property="og:description" content="Brand rules and styling guidelines used across the website.">
+    <meta property="og:image" content="https://milosdronjak.me/img/logo-white_100-only_MD-rect.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Brand identity, Milos Dronjak">
+    <meta name="twitter:description" content="Brand rules and styling guidelines used across the website.">
+    <meta name="twitter:image" content="https://milosdronjak.me/img/logo-white_100-only_MD-rect.png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="../css/brand-identity.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <button type="button" class="site-header__menu-btn" aria-expanded="false" aria-controls="site-nav-primary" aria-label="Open menu">
+                <img class="site-header__menu-icon" src="../img/burger%20icon.svg" alt="" width="26" height="26" decoding="async">
+            </button>
+            <a class="site-header__brand" href="/" aria-label="Milos Dronjak home">
+                <span class="u-type-ui">milosdronjak.me</span>
+            </a>
+            <nav id="site-nav-primary" class="site-nav" aria-label="Primary">
+                <a href="/">home</a>
+                <a href="/how-I-work">how-I-work</a>
+                <a class="is-active" href="/brand-identity">brand-identity</a>
+            </nav>
+            <div class="site-header__meta">
+                <span class="product-tags__avail"><span class="live-dot live-dot--avail" aria-hidden="true"></span>Available Now</span>
+                <a class="btn btn--audit" href="/contact">Contact me</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="brand-page">
+        <section class="brand-hero" data-reveal-section aria-labelledby="brand-title">
+            <div class="brand-wrap">
+                <h1 id="brand-title" class="u-type-display brand-hero__title reveal reveal--up" data-reveal-scroll>Brand identity and styling rules</h1>
+                <p class="u-type-body brand-hero__intro reveal reveal--up" data-reveal-scroll>Use rule IDs below when requesting changes (example: "update BR-03 to 1rem"). Each rule includes what to use and where it currently applies.</p>
+            </div>
+        </section>
+
+        <section class="brand-rules" data-reveal-section aria-label="Brand rules">
+            <div class="brand-wrap">
+                <div class="brand-rule-grid">
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-01</p>
+                        <h2 class="brand-rule__title">Color tokens only</h2>
+                        <p class="brand-rule__desc">Always use token colors from `:root` in `css/styles.css`.</p>
+                        <ul class="brand-rule__list">
+                            <li>Primary text: `--ink`</li>
+                            <li>Main accent: `--orange`, `--orange-dark`, `--orange-darker`</li>
+                            <li>Soft section background: `--blush`</li>
+                        </ul>
+                        <div class="brand-rule__example" aria-label="Color example">
+                            <span class="brand-chip brand-chip--ink">Ink</span>
+                            <span class="brand-chip brand-chip--orange">Orange</span>
+                            <span class="brand-chip brand-chip--orange-dark">Orange dark</span>
+                            <span class="brand-chip brand-chip--blush">Blush bg</span>
+                        </div>
+                    </article>
+
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-02</p>
+                        <h2 class="brand-rule__title">Typography hierarchy</h2>
+                        <p class="brand-rule__desc">Headings use Fraunces. Body/UI text uses Montserrat.</p>
+                        <ul class="brand-rule__list">
+                            <li>Section headings: `u-type-h2`</li>
+                            <li>Body copy: `u-type-body` or tokenized component text</li>
+                            <li>Emphasis: semibold lead + muted body</li>
+                        </ul>
+                        <div class="brand-rule__example" aria-label="Typography example">
+                            <p class="u-type-h2">Section title example</p>
+                            <p class="u-type-body"><strong>Lead line example.</strong><span class="u-type-muted"> Supporting body text example for hierarchy.</span></p>
+                        </div>
+                    </article>
+
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-03</p>
+                        <h2 class="brand-rule__title">Body text scale</h2>
+                        <p class="brand-rule__desc">Body copy is consistent across pages.</p>
+                        <ul class="brand-rule__list">
+                            <li>Desktop: `0.92rem`</li>
+                            <li>Mobile: `0.82rem`</li>
+                            <li>Prefer tokens over hardcoded px</li>
+                        </ul>
+                        <div class="brand-rule__example" aria-label="Body scale example">
+                            <p class="u-type-body">Desktop body sample (0.92rem).</p>
+                        </div>
+                    </article>
+
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-04</p>
+                        <h2 class="brand-rule__title">Container alignment</h2>
+                        <p class="brand-rule__desc">All section content should align to the same shell.</p>
+                        <ul class="brand-rule__list">
+                            <li>Use `max-width: var(--max)`</li>
+                            <li>Horizontal gutter: `padding: 0 var(--space)`</li>
+                            <li>Use `box-sizing: border-box; width: 100%` for inner wrappers</li>
+                        </ul>
+                        <div class="brand-rule__example brand-rule__example--shell" aria-label="Container example">
+                            <div class="brand-shell-line">container start</div>
+                            <div class="brand-shell-line brand-shell-line--inner">aligned inner block</div>
+                        </div>
+                    </article>
+
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-05</p>
+                        <h2 class="brand-rule__title">Buttons and CTA language</h2>
+                        <p class="brand-rule__desc">Reuse shared button styles (`btn` modifiers) and keep CTA copy concise.</p>
+                        <ul class="brand-rule__list">
+                            <li>Primary CTA: `btn btn--primary`</li>
+                            <li>Secondary CTA: `btn btn--ghost`</li>
+                            <li>Avoid one-off button CSS when a shared modifier exists</li>
+                        </ul>
+                        <div class="brand-rule__example brand-rule__example--btns" aria-label="Button example">
+                            <span class="btn btn--primary">+ Book a backlog audit</span>
+                            <span class="btn btn--ghost">Read the case study</span>
+                        </div>
+                    </article>
+
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-06</p>
+                        <h2 class="brand-rule__title">Animation style</h2>
+                        <p class="brand-rule__desc">Use soft fade/translate transitions and section reveal choreography.</p>
+                        <ul class="brand-rule__list">
+                            <li>Reveal class pattern: `.reveal`, `.reveal--up`, `.is-revealed`</li>
+                            <li>Copy switches: `is-updating` + `copyFade` timing</li>
+                            <li>Respect reduced motion in CSS and JS</li>
+                        </ul>
+                        <div class="brand-rule__example" aria-label="Animation example">
+                            <span class="brand-pill">reveal</span>
+                            <span class="brand-pill">is-updating</span>
+                            <span class="brand-pill">is-hovered</span>
+                        </div>
+                    </article>
+
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-07</p>
+                        <h2 class="brand-rule__title">Section content pattern</h2>
+                        <p class="brand-rule__desc">When a section needs explanation text, use lead/sub text structure.</p>
+                        <ul class="brand-rule__list">
+                            <li>Lead line: semibold (`strong`)</li>
+                            <li>Supporting paragraph: muted text (`span`/body)</li>
+                            <li>Used in homepage Description and tools-related sections</li>
+                        </ul>
+                        <div class="brand-rule__example" aria-label="Section content example">
+                            <p class="u-type-body"><strong>Every Shopify agency has the same quiet backlog.</strong><span class="u-type-muted"> Supporting sentence follows in muted tone.</span></p>
+                        </div>
+                    </article>
+
+                    <article class="brand-rule reveal reveal--up" data-reveal-scroll>
+                        <p class="brand-rule__id">BR-08</p>
+                        <h2 class="brand-rule__title">Breakpoints</h2>
+                        <p class="brand-rule__desc">Use the two shared breakpoints unless there is a specific reason.</p>
+                        <ul class="brand-rule__list">
+                            <li>Tablet: `960px`</li>
+                            <li>Mobile: `640px`</li>
+                            <li>Mobile nav behavior follows `ui.breakpoints.navMobile` from `MilosSite`</li>
+                        </ul>
+                        <div class="brand-rule__example" aria-label="Breakpoint example">
+                            <span class="brand-pill">960px tablet</span>
+                            <span class="brand-pill">640px mobile</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact" data-reveal-section>
+        <div class="site-footer__wrap">
+            <div class="site-footer__main">
+                <div class="site-footer__shell">
+                    <div class="site-footer__grid">
+                    <div class="site-footer__col reveal reveal--up" data-reveal-scroll>
+                        <p class="site-footer__col-label">Contact</p>
+                        <ul class="site-footer__contact-list">
+                            <li><span class="site-footer__contact-type">Email</span><a class="site-footer__contact-value" href="mailto:hello@milosdronjak.me">hello@milosdronjak.me</a></li>
+                            <li><span class="site-footer__contact-type">Phone</span><a class="site-footer__contact-value" href="tel:+31639293114">+31639293114</a></li>
+                            <li><span class="site-footer__contact-type">WhatsApp</span><a class="site-footer__contact-value" href="https://wa.me/31639293114" rel="noopener noreferrer" target="_blank">Open chat</a></li>
+                            <li><span class="site-footer__contact-type">LinkedIn</span><a class="site-footer__contact-value" href="https://www.linkedin.com/in/mdwebdev" rel="noopener noreferrer" target="_blank">mdwebdev</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-footer__col reveal reveal--up" data-reveal-scroll>
+                        <p class="site-footer__col-label">Pages</p>
+                        <ul class="site-footer__nav-list">
+                            <li><a href="/">home</a></li>
+                            <li><a href="/how-I-work">how-I-work</a></li>
+                            <li><a href="/brand-identity">brand-identity</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="site-footer__bottom reveal reveal--up" data-reveal-scroll>
+                        <p class="site-footer__copy">© 2026 Miloš Dronjak · milosdronjak.me</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/site-system.js" defer></script>
+    <script src="../js/brand-identity.js" defer></script>
+</body>
+</html>

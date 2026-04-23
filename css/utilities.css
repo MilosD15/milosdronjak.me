@@ -1,0 +1,216 @@
+/* Typography & layout utilities — see docs/styling.md
+   Uses tokens from styles.css :root (--font-display, --font-ui, --ink, …) */
+
+:root {
+    --u-type-display: 2.75rem;
+    --u-type-display-sm: 1.6rem;
+    --u-type-h2: 2rem;
+    --u-type-h2-sm: 1.35rem;
+    --u-type-h3: 1.35rem;
+    --u-type-h3-sm: 1.12rem;
+    --u-type-body: 0.92rem;
+    --u-type-body-mobile: 0.82rem;
+    --u-type-body-sm: 0.875rem;
+    --u-type-ui: 0.7rem;
+    --u-type-ui-sm: 0.65rem;
+    --u-interactive-ms: 300ms;
+}
+
+.u-type-display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: var(--u-type-display);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+.u-type-h2 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: var(--u-type-h2);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+.u-type-h3 {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: var(--u-type-h3);
+    line-height: 1.25;
+    color: var(--ink);
+}
+
+.u-type-body {
+    font-family: var(--font-ui);
+    font-weight: 400;
+    font-size: var(--u-type-body);
+    line-height: 1.55;
+    color: var(--ink);
+}
+
+.u-type-body-serif {
+    font-family: var(--font-ui);
+    font-weight: 400;
+    font-size: var(--u-type-body);
+    line-height: 1.65;
+    color: var(--ink);
+}
+
+.u-type-body-sm {
+    font-family: var(--font-ui);
+    font-weight: 400;
+    font-size: var(--u-type-body-sm);
+    line-height: 1.55;
+    color: var(--ink);
+}
+
+.u-type-muted {
+    color: var(--muted);
+}
+
+.u-text-accent {
+    color: var(--orange-dark);
+}
+
+.u-text-accent-light {
+    color: var(--orange);
+}
+
+.u-type-ui {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: var(--u-type-ui);
+    line-height: 1.35;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(28, 28, 28, 0.55);
+}
+
+.u-fw-medium {
+    font-weight: 500;
+}
+
+.u-fw-semibold {
+    font-weight: 600;
+}
+
+.u-fw-bold {
+    font-weight: 700;
+}
+
+.u-fw-heavy {
+    font-weight: 900;
+}
+
+.u-text-strong,
+.u-type-body strong,
+.u-type-body-serif strong {
+    font-weight: 600;
+}
+
+.u-italic {
+    font-style: italic;
+}
+
+.u-link-accent {
+    color: var(--orange-dark);
+    text-decoration: none;
+    transition: color var(--u-interactive-ms) ease, background-color var(--u-interactive-ms) ease, border-color var(--u-interactive-ms) ease, filter var(--u-interactive-ms) ease;
+}
+
+.u-link-accent:hover,
+.u-link-accent:focus-visible {
+    color: var(--orange-darker);
+}
+
+.u-link-accent-light {
+    color: var(--orange);
+    text-decoration: none;
+    transition: color var(--u-interactive-ms) ease, background-color var(--u-interactive-ms) ease, border-color var(--u-interactive-ms) ease, filter var(--u-interactive-ms) ease;
+}
+
+.u-link-accent-light:hover,
+.u-link-accent-light:focus-visible {
+    color: var(--orange-dark);
+}
+
+.u-prose {
+    max-width: 42rem;
+}
+
+.u-prose > * + * {
+    margin-top: 1rem;
+}
+
+.u-stack-sm > * + * {
+    margin-top: 0.5rem;
+}
+
+.u-stack-md > * + * {
+    margin-top: 1rem;
+}
+
+.u-stack-lg > * + * {
+    margin-top: 1.5rem;
+}
+
+/* Tablet: let prose span the single column comfortably */
+@media (max-width: 960px) {
+    .u-prose {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .u-type-display {
+        font-size: var(--u-type-display-sm);
+        line-height: 1.14;
+    }
+
+    .u-type-h2 {
+        font-size: var(--u-type-h2-sm);
+        line-height: 1.18;
+    }
+
+    .u-type-h3 {
+        font-size: var(--u-type-h3-sm);
+        line-height: 1.22;
+    }
+
+    .u-type-body,
+    .u-type-body-serif {
+        font-size: var(--u-type-body-mobile);
+        line-height: 1.55;
+    }
+
+    .u-type-body-serif {
+        line-height: 1.6;
+    }
+
+    .u-type-body-sm {
+        font-size: var(--u-type-body-mobile);
+    }
+
+    .u-type-ui {
+        font-size: var(--u-type-ui-sm);
+        letter-spacing: 0.07em;
+    }
+
+    .u-prose {
+        max-width: none;
+    }
+
+    .u-prose > * + * {
+        margin-top: 0.85rem;
+    }
+
+    .u-stack-md > * + * {
+        margin-top: 0.85rem;
+    }
+
+    .u-stack-lg > * + * {
+        margin-top: 1.25rem;
+    }
+}
