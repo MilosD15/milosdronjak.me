@@ -88,26 +88,26 @@
                         </div>
                     </div>
 
-                    <form action="mailto:hello@milosdronjak.me" method="post" enctype="text/plain" class="contact-form is-active" data-contact-form="agency">
+                    <form class="contact-form is-active" data-contact-form="agency" novalidate>
                         <p class="contact-form-card__label">SEND THE BRIEF</p>
-                        <label class="contact-form__field"><span>YOUR NAME + ROLE</span><input type="text" name="contactRole" placeholder="Tech lead or partner preferred" required></label>
-                        <label class="contact-form__field"><span>EMAIL</span><input type="email" name="email" placeholder="So I can write back" required></label>
+                        <label class="contact-form__field"><span>YOUR NAME + ROLE</span><input type="text" name="contactRole" placeholder="Tech lead or partner preferred" autocomplete="name" required></label>
+                        <label class="contact-form__field"><span>EMAIL</span><input type="email" name="email" placeholder="So I can write back" autocomplete="email" required></label>
                         <label class="contact-form__field"><span>THREE BACKLOG TICKETS</span><textarea name="tickets" rows="5" placeholder="Links to Linear / Jira / Notion, or a short description per ticket" required></textarea></label>
                         <button class="btn btn--primary contact-form__cta" type="submit"><span class="btn--primary__left">Send three tickets →</span><span class="btn--primary__right">REPLY WITHIN 24 HOURS</span></button>
                     </form>
 
-                    <form action="mailto:hello@milosdronjak.me" method="post" enctype="text/plain" class="contact-form" data-contact-form="freelance" hidden>
+                    <form class="contact-form" data-contact-form="freelance" hidden novalidate>
                         <p class="contact-form-card__label">TELL ME ABOUT YOUR PROJECT</p>
-                        <label class="contact-form__field"><span>YOUR NAME</span><input type="text" name="name" placeholder="How should I call you" required></label>
-                        <label class="contact-form__field"><span>EMAIL</span><input type="email" name="email" placeholder="So I can write back" required></label>
+                        <label class="contact-form__field"><span>YOUR NAME</span><input type="text" name="name" placeholder="How should I call you" autocomplete="name" required></label>
+                        <label class="contact-form__field"><span>EMAIL</span><input type="email" name="email" placeholder="So I can write back" autocomplete="email" required></label>
                         <label class="contact-form__field"><span>WHAT DO YOU NEED</span><textarea name="projectNeeds" rows="5" placeholder="A quick description of what's broken, what needs building, or what you're not sure about" required></textarea></label>
                         <button class="btn btn--primary contact-form__cta" type="submit"><span class="btn--primary__left">Send it over →</span><span class="btn--primary__right">REPLY WITHIN 24 HOURS</span></button>
                     </form>
 
-                    <form action="mailto:hello@milosdronjak.me" method="post" enctype="text/plain" class="contact-form" data-contact-form="hi" hidden>
+                    <form class="contact-form" data-contact-form="hi" hidden novalidate>
                         <p class="contact-form-card__label">SAY HI</p>
-                        <label class="contact-form__field"><span>YOUR NAME</span><input type="text" name="name" placeholder="Good to meet you" required></label>
-                        <label class="contact-form__field"><span>EMAIL</span><input type="email" name="email" placeholder="So I can write back" required></label>
+                        <label class="contact-form__field"><span>YOUR NAME</span><input type="text" name="name" placeholder="Good to meet you" autocomplete="name" required></label>
+                        <label class="contact-form__field"><span>EMAIL</span><input type="email" name="email" placeholder="So I can write back" autocomplete="email" required></label>
                         <label class="contact-form__field"><span>WHAT'S ON YOUR MIND</span><textarea name="message" rows="5" placeholder="A question, an idea, a collaboration, anything" required></textarea></label>
                         <button class="btn btn--primary contact-form__cta" type="submit"><span class="btn--primary__left">Send it →</span><span class="btn--primary__right">I READ EVERYTHING</span></button>
                     </form>
