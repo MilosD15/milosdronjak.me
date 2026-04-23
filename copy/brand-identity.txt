@@ -19,7 +19,8 @@ brand_text: milosdronjak.me
 nav_link_1: home
 nav_link_2: how-I-work
 nav_link_3: brand-identity
-header_label: SOURCE OF TRUTH
+header_availability: Available Now
+header_cta: Contact me
 
 [hero]
 title: Brand identity and styling rules

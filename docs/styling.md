@@ -60,6 +60,9 @@ Breakpoints are standardized:
 - **`@media (max-width: 640px)`**: phone typography and compact spacing
 
 At ≤640px, body copy should resolve to the mobile body token and remain consistent across sections/pages.
+The shared horizontal gutter token is also reduced on mobile:
+
+- `--space: 0.6rem` at `@media (max-width: 640px)`
 
 ## Page-specific notes
 

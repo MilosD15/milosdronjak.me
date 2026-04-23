@@ -18,8 +18,8 @@ brand_link_aria_label: Milos Dronjak home
 nav_link_1: home
 nav_link_2: how-I-work
 nav_link_3: case
-header_label: COMPLETELY FREE
-header_cta: + Book audit
+header_availability: Available Now
+header_cta: Contact me
 
 [hero]
 title: I'm not here to ship features. I'm here to remove frustration.

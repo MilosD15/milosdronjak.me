@@ -19,12 +19,11 @@ brand_link_aria_label: Milos Dronjak home
 nav_link_1: home
 nav_link_2: how-I-work
 nav_link_3: case
-header_label: COMPLETELY FREE
-header_cta: + Book audit
+header_availability: Available Now
+header_cta: Contact me
 
 [hero]
 hero_tagline: Shopify dev & automation specialist
-availability_badge: Available Now
 title: The only Shopify dev whose first day isn't your first problem.
 subtitle: I clear the automations your seniors keep leaving behind, Zapier, Make, Shopify Flow, and custom code when the no-code options run out.
 

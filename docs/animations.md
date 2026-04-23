@@ -36,6 +36,7 @@ Used on homepage and `how-I-work`:
 - Animated children: `data-reveal-scroll`
 - Reveal trigger: section passes ~60% viewport progress
 - Grouped reveal uses stagger; ungrouped elements can use observer fallback
+- Case page also uses this reveal model (`js/case-wonderful-dental.js`) and supports per-section thresholds with `data-reveal-threshold` (for large media sections, e.g. `0.2`)
 
 ## Homepage (`js/home.js`)
 
@@ -66,6 +67,34 @@ Current patterns:
    - Connector coordinates are recalculated on resize and hover state changes
 4. **Mobile behavior**
    - Ticket scene hidden at phone breakpoint in section-specific CSS
+
+## Case page (`js/case-wonderful-dental.js`)
+
+Current patterns:
+
+1. **Section reveal groups**
+   - Same grouped reveal behavior as other pages
+   - Optional per-section threshold via `data-reveal-threshold`
+2. **Before/after compare sliders**
+   - Controlled with `data-compare`, `data-compare-range`, `data-compare-before`, `data-compare-divider`
+   - Before layer uses clip-path reveal; divider/handle follow range value
+3. **Mobile nav behavior**
+   - Reuses shared nav open/close behavior pattern
+
+## Contact page (`js/contact.js`)
+
+Current patterns:
+
+1. **Audience toggle switching**
+   - Controlled by `data-contact-type-btn` and `data-contact-form`
+   - Uses the same fade-switch pattern as homepage focus copy switching:
+     - `MilosSite.motion.ms.copyFade`
+     - `.is-updating` transition class
+2. **Form variants**
+   - `agency`, `freelance`, `hi` form blocks
+   - Only one is visible/active at a time (`.is-active`, `hidden`)
+3. **Mobile nav behavior**
+   - Reuses shared nav open/close behavior pattern
 
 ## Reduced motion
 

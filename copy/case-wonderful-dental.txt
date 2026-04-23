@@ -1,0 +1,120 @@
+PAGE: Case — Wonderful Dental
+PATH: /cases/wonderful-dental
+
+[meta]
+title: Wonderful Dental case study, Milos Dronjak
+description: How a one-off hero animation turned into a 3.5-year Shopify Plus collaboration. Full redesign, automation layer, and ongoing development.
+og_title: Wonderful Dental case study, Milos Dronjak
+og_description: How a one-off hero animation turned into a 3.5-year Shopify Plus collaboration.
+twitter_title: Wonderful Dental case study, Milos Dronjak
+twitter_description: How a one-off hero animation turned into a 3.5-year Shopify Plus collaboration.
+og_image_alt: Wonderful Dental Shopify store before and after redesign
+
+[header]
+nav_link_1: home
+nav_link_2: how-I-work
+nav_link_3: case
+header_availability: Available Now
+header_cta: Contact me
+
+[hero]
+title: A hero animation that turned into a four-year collaboration.
+meta_label_1: Client
+meta_value_1: Wonderful Dental
+meta_label_2: Location
+meta_value_2: United States
+meta_label_3: Stack
+meta_value_3: Shopify Theme Dev · Zapier · Shopify Flow · Liquid
+meta_label_4: Status
+meta_value_4: Active · 3.5 years
+
+[review]
+section_label: Client review
+stars: ★★★★★
+quote: Every once in a while, you find someone on Upwork that not only does a great job but is also very enjoyable to work together with on a project. Miloš fits this perfectly. He delivered everything we requested with high quality and fast turnaround. Our requirements were difficult, and he did an excellent job in completing the task creatively. We will certainly be happy to hire him again on future projects.
+reviewer_name: Joseph Epstein
+reviewer_role: CEO
+reviewer_company: Wonderful Dental
+
+[results]
+section_title: What we achieved
+metric_1_value: +270%
+metric_1_label: Monthly samples requested
+metric_2_value: +45%
+metric_2_label: Monthly revenue
+metric_3_value: +20%
+metric_3_label: Monthly orders, same period
+results_note: 3 months post-redesign vs. the month they hired me
+
+[storefront_redesign]
+section_title: Wonderful Dental storefront redesign
+label_before: BEFORE
+label_after: AFTER
+item_1_before_image: img/cases/wonderful-dental/wonderful-case-before-1.png
+item_1_after_image: img/cases/wonderful-dental/wonderful-case-after-1.png
+item_2_before_image: img/cases/wonderful-dental/wonderful-case-before-2.png
+item_2_after_image: img/cases/wonderful-dental/wonderful-case-after-2.png
+item_3_before_image: img/cases/wonderful-dental/wonderful-case-before-3.png
+item_3_after_image: img/cases/wonderful-dental/wonderful-case-after-3.png
+
+[story_01]
+section_title: How it started
+paragraph_1: Joseph found me on Upwork. He needed a hero animation for the Wonderful Dental website, one of the fastest-growing dental companies in the US. I delivered it ahead of schedule. He asked if I could help with a few other sections too.
+paragraph_2: That's how the full redesign started.
+bold_moment: The store worked. It just looked like every other Shopify store in the dental industry. Joseph had a clear vision to elevate it, and he needed someone who could translate that vision into a real, custom-built experience.
+paragraph_3: We worked closely together, Joseph, a graphic designer, and me. The designer brought the visual direction. I brought it to life: custom sections, scroll animations, parallax effects, page transitions, a custom loader. Every interaction was built deliberately, not dropped in from a theme setting.
+video: videos/wonderful-dental-walking-characters.mp4
+video_caption: The original hero animation. The project that started everything.
+
+[story_02]
+section_title: The redesign
+paragraph_1: The redesign touched every part of the storefront. Custom sections built from scratch in Liquid. Mobile responsiveness rebuilt properly. Speed optimized from the ground up, image optimization, codebase cleanup, interaction simplification.
+bold_moment: The product recommendation quiz was the build I'm most proud of. A fully custom flow, no app, no third-party dependency, that guides a customer to the right product based on their answers. Built directly into the theme, exactly the way Joseph envisioned it.
+paragraph_2: Once the storefront was in place, we moved to the app layer. Judge.me for reviews, Klaviyo for email flows, Appstle Subscriptions and Loyalty for retention, Checkout Blocks for conversion. Not just installed, configured and connected so they work together as a system.
+video_1: videos/wonderful-quiz.mp4
+video_1_caption: Product recommendation quiz. Custom built, no third-party app.
+video_2: videos/wonderful-loyalty-page.mp4
+video_2_caption: CUSTOM SCROLL ANIMATIONS
+
+[story_03]
+section_title: The automation layer
+paragraph_1: After the redesign was live, we started working on the operations layer. First the app integrations and their flows, then Zapier automations, then connecting external systems to Shopify through storefront events and custom logic.
+paragraph_2: One of the more complex pieces was the sample handling flow. Wonderful Dental runs two separate fulfilment processes, one for samples, one for orders. I refactored and improved the existing flow: cleaner routing logic, better error visibility, and GA4 tracking wired in so the analytics and marketing teams could finally see what was actually happening at each step.
+bold_moment: The goal was never to make things more technical. It was to make things invisible, and to make sure that when something broke, it broke loudly, with an alert, not silently in the background.
+paragraph_3: The people who benefited weren't just in operations. The team responsible for conversion optimization and customer acquisition gained clean, reliable data for the first time. That changes how decisions get made.
+image: img/cases/wonderful-dental/wonderful-dental-zapier-flows.png
+image_caption: ZAPIER FLOWS I CREATED OR ADJUSTED
+
+[story_04]
+section_title: Where we are now
+paragraph_1: Three and a half years later, Joseph and I are still working together. The current focus is on improving the customer experience for both new and returning customers, using emerging AI flows and new Shopify capabilities to make the ordering process smarter.
+paragraph_2: A month ago that looked like building an AI-assisted ordering flow: a customer can add products to their cart, authenticate, and complete their purchase through Shopify checkout, guided by logic that understands where they are in the journey and what they need next.
+bold_moment: A review proves one project landed well. Three and a half years of continued work proves something harder to fake.
+
+[final_cta]
+title: Your backlog has a solution. Let's find it.
+subtitle: Send me three tickets. I'll tell you what I can fix this week, what takes longer, and what I'd leave for someone else.
+primary_cta: + Book a backlog audit
+support_line: COMPLETELY FREE.
+
+[footer]
+contact_title: Contact
+contact_label_1: Email
+contact_value_1: hello@milosdronjak.me
+contact_label_2: Phone
+contact_value_2: +31639293114
+contact_label_3: WhatsApp
+contact_value_3: Open chat
+contact_label_4: LinkedIn
+contact_value_4: mdwebdev
+contact_label_5: GitHub
+contact_value_5: MilosD15
+contact_label_6: Upwork
+contact_value_6: Milos D.
+pages_title: Pages
+footer_nav_link_1: home
+footer_nav_link_2: how-I-work
+footer_nav_link_3: case
+footer_nav_link_4: contact
+footer_availability: Available Now
+copyright: © 2026 Miloš Dronjak · milosdronjak.me
