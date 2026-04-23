@@ -1954,6 +1954,11 @@ a {
         justify-content: center;
         text-align: center;
     }
+
+    .pill {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+    }
 }
 
 @media (max-width: 480px) {
