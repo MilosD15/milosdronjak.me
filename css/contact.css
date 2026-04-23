@@ -5,7 +5,7 @@
 }
 
 .contact-hero {
-    padding: clamp(1.5rem, 4vw, 2.75rem) 0;
+    padding: clamp(1.5rem, 4vw, 2.75rem) 0 clamp(1rem, 4vw, 1.5rem);
 }
 
 .contact-supertitle {
@@ -26,7 +26,7 @@
 }
 
 .contact-form-block {
-    padding: 0 0 clamp(1.75rem, 4vw, 3rem);
+    padding: 0 0 clamp(1.75rem, 4vw, 2.5rem);
 }
 
 .contact-followup {
@@ -140,18 +140,186 @@
     margin-top: 0.45rem;
 }
 
-.contact-form__fallback {
-    margin-top: 0.9rem;
-    color: var(--muted);
+@keyframes check-circle {
+    from { stroke-dashoffset: 145; }
+    to   { stroke-dashoffset: 0; }
 }
 
-.contact-form__fallback a {
+@keyframes check-tick {
+    from { stroke-dashoffset: 34; }
+    to   { stroke-dashoffset: 0; }
+}
+
+@keyframes contact-success-fade {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.contact-form__success {
+    padding: 1.5rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+    text-align: center;
+}
+
+.contact-success__check {
+    width: 3.5rem;
+    height: 3.5rem;
+    color: #2d9a5b;
+    flex-shrink: 0;
+}
+
+.contact-success__circle {
+    stroke: currentColor;
+    stroke-dasharray: 145;
+    stroke-dashoffset: 145;
+    animation: check-circle 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s forwards;
+}
+
+.contact-success__tick {
+    stroke: currentColor;
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    animation: check-tick 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+.contact-success__text {
+    animation: contact-success-fade 0.35s ease 0.75s both;
+}
+
+.contact-form__success-sub {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+}
+
+.contact-form__success-msg {
+    font-family: var(--font-ui);
+    font-size: var(--body-text-size);
     color: var(--ink);
-    text-underline-offset: 0.15em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-success__circle,
+    .contact-success__tick {
+        animation: none;
+        stroke-dashoffset: 0;
+    }
+
+    .contact-success__text {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.contact-direct {
+    margin-top: clamp(1rem, 3.2vw, 1.25rem);
+}
+
+.contact-direct__title {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+}
+
+.contact-direct__actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.contact-direct__actions li {
+    margin: 0;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.contact-direct__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.4rem;
+    border: 1px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-size: var(--body-text-size);
+    font-weight: 500;
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.contact-direct__btn:hover {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+}
+
+.contact-direct__btn:focus-visible {
+    outline: 2px solid var(--orange-dark);
+    outline-offset: 3px;
+}
+
+.contact-direct__icon {
+    display: flex;
+    flex-shrink: 0;
+    color: var(--ink);
+}
+
+.contact-direct__btn:hover .contact-direct__icon {
+    color: var(--white);
+}
+
+.contact-direct__icon-svg {
+    display: block;
+}
+
+.contact-direct__label {
+    line-height: 1.2;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @media (max-width: 640px) {
     .contact-title {
         margin-bottom: 0.8rem;
+    }
+
+    .contact-direct__actions {
+        flex-direction: column;
+    }
+
+    .contact-direct__actions li {
+        flex: none;
+        width: 100%;
     }
 }

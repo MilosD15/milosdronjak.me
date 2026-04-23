@@ -167,6 +167,8 @@
     setType(activeBtn ? activeBtn.getAttribute('data-value') : 'agency', true)
   }
 
+  const CONTACT_API_URL = 'https://admin.milosdronjak.me/api/contact-submissions'
+
   function ensureErrorNode(field) {
     let node = field.querySelector('.contact-form__error')
     if (!node) {
@@ -191,11 +193,141 @@
     if (errorNode) errorNode.textContent = ''
   }
 
+  function injectHoneypot(form) {
+    const input = document.createElement('input')
+    input.type = 'text'
+    input.name = 'website'
+    input.value = ''
+    input.autocomplete = 'off'
+    input.setAttribute('tabindex', '-1')
+    input.setAttribute('aria-hidden', 'true')
+    input.style.cssText =
+      'position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;'
+    form.appendChild(input)
+  }
+
+  function showSuccess(form) {
+    const card = form.closest('.contact-form-card')
+    if (card) {
+      const toggle = card.querySelector('.contact-toggle')
+      if (toggle) toggle.style.display = 'none'
+    }
+
+    form.innerHTML = `
+      <div class="contact-form__success">
+        <svg class="contact-success__check" viewBox="0 0 52 52" aria-hidden="true">
+          <circle class="contact-success__circle" cx="26" cy="26" r="23" fill="none" stroke-width="2.5"/>
+          <path class="contact-success__tick" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M14 27l8 8 16-16"/>
+        </svg>
+        <div class="contact-success__text">
+          <p class="contact-form__success-sub">On it!</p>
+          <p class="contact-form__success-msg">I'll be in touch shortly.</p>
+        </div>
+      </div>
+    `
+  }
+
+  function showGlobalError(form, message) {
+    let el = form.querySelector('.contact-form__error--global')
+    if (!el) {
+      el = document.createElement('p')
+      el.className = 'contact-form__error contact-form__error--global'
+      const cta = form.querySelector('.contact-form__cta')
+      if (cta) form.insertBefore(el, cta)
+      else form.appendChild(el)
+    }
+    el.textContent = message
+  }
+
+  function clearGlobalError(form) {
+    const el = form.querySelector('.contact-form__error--global')
+    if (el) el.remove()
+  }
+
+  function buildSubmissionMeta() {
+    return {
+      source_page: '/contact',
+      referrer: typeof document.referrer === 'string' ? document.referrer : '',
+      user_agent: typeof navigator.userAgent === 'string' ? navigator.userAgent : '',
+      submitted_at: new Date().toISOString()
+    }
+  }
+
+  function fieldSelectorsForFormType(formType) {
+    if (formType === 'agency') {
+      return {
+        name: 'input[name="contactRole"]',
+        email: 'input[name="email"]',
+        message: 'textarea[name="tickets"]'
+      }
+    }
+    if (formType === 'freelance') {
+      return {
+        name: 'input[name="name"]',
+        email: 'input[name="email"]',
+        message: 'textarea[name="projectNeeds"]'
+      }
+    }
+    return {
+      name: 'input[name="name"]',
+      email: 'input[name="email"]',
+      message: 'textarea[name="message"]'
+    }
+  }
+
+  function applyApiFieldErrors(form, formType, fieldErrors) {
+    if (!fieldErrors || typeof fieldErrors !== 'object') return
+    const map = fieldSelectorsForFormType(formType)
+    Object.keys(fieldErrors).forEach(function (apiKey) {
+      const sel = map[apiKey] || map[String(apiKey).toLowerCase()]
+      if (!sel) return
+      const control = form.querySelector(sel)
+      if (!control) return
+      const field = control.closest('.contact-form__field')
+      if (!field) return
+      let msg = fieldErrors[apiKey]
+      if (Array.isArray(msg)) msg = msg[0] || 'Invalid value.'
+      if (typeof msg !== 'string') msg = String(msg)
+      setFieldError(field, control, msg)
+    })
+  }
+
+  function buildJsonPayload(form, formType) {
+    const meta = buildSubmissionMeta()
+    if (formType === 'agency') {
+      return {
+        form_type: 'agency',
+        name: form.querySelector('input[name="contactRole"]').value.trim(),
+        email: form.querySelector('input[name="email"]').value.trim(),
+        message: form.querySelector('textarea[name="tickets"]').value.trim(),
+        meta
+      }
+    }
+    if (formType === 'freelance') {
+      return {
+        form_type: 'freelance',
+        name: form.querySelector('input[name="name"]').value.trim(),
+        email: form.querySelector('input[name="email"]').value.trim(),
+        message: form.querySelector('textarea[name="projectNeeds"]').value.trim(),
+        meta
+      }
+    }
+    return {
+      form_type: 'hi',
+      name: form.querySelector('input[name="name"]').value.trim(),
+      email: form.querySelector('input[name="email"]').value.trim(),
+      message: form.querySelector('textarea[name="message"]').value.trim(),
+      meta
+    }
+  }
+
   function initFormValidation() {
     const forms = Array.from(document.querySelectorAll('.contact-form'))
     if (!forms.length) return
 
     forms.forEach(function (form) {
+      injectHoneypot(form)
+
       const fields = Array.from(form.querySelectorAll('.contact-form__field'))
       if (fields.length < 3) return
 
@@ -207,10 +339,29 @@
       const messageInput = messageField.querySelector('textarea')
       if (!nameInput || !emailInput || !messageInput) return
 
+      const formType = form.getAttribute('data-contact-form') || 'agency'
+
+      function clearAllGlobalOnInput() {
+        clearGlobalError(form)
+      }
+
+      form.querySelectorAll('input, textarea').forEach(function (el) {
+        if (el.getAttribute('name') === 'website') return
+        el.addEventListener('input', clearAllGlobalOnInput)
+      })
+
       function validateName() {
         const value = nameInput.value.trim()
         if (!value) {
           setFieldError(nameField, nameInput, 'Name is required.')
+          return false
+        }
+        if (value.length < 2) {
+          setFieldError(nameField, nameInput, 'Name must be at least 2 characters.')
+          return false
+        }
+        if (value.length > 160) {
+          setFieldError(nameField, nameInput, 'Name must be 160 characters or fewer.')
           return false
         }
         clearFieldError(nameField, nameInput)
@@ -228,6 +379,10 @@
           setFieldError(emailField, emailInput, 'Please enter a valid email address.')
           return false
         }
+        if (value.length > 320) {
+          setFieldError(emailField, emailInput, 'Email must be 320 characters or fewer.')
+          return false
+        }
         clearFieldError(emailField, emailInput)
         return true
       }
@@ -236,6 +391,14 @@
         const value = messageInput.value.trim()
         if (!value) {
           setFieldError(messageField, messageInput, 'Message is required.')
+          return false
+        }
+        if (value.length < 3) {
+          setFieldError(messageField, messageInput, 'Message must be at least 3 characters.')
+          return false
+        }
+        if (value.length > 8000) {
+          setFieldError(messageField, messageInput, 'Message must be 8000 characters or fewer.')
           return false
         }
         clearFieldError(messageField, messageInput)
@@ -247,10 +410,84 @@
       messageInput.addEventListener('input', validateMessage)
 
       form.addEventListener('submit', function (e) {
+        e.preventDefault()
+
         const valid = validateName() && validateEmail() && validateMessage()
-        if (!valid) {
-          e.preventDefault()
+        if (!valid) return
+
+        const honeypot = form.querySelector('input[name="website"]')
+        if (honeypot && honeypot.value.trim().length > 0) {
+          showSuccess(form)
+          return
         }
+
+        const btn = form.querySelector('.contact-form__cta')
+        const leftSpan = btn && btn.querySelector('.btn--primary__left')
+        const originalLabel = leftSpan ? leftSpan.textContent : ''
+
+        clearGlobalError(form)
+
+        async function runSubmit() {
+          if (btn) btn.disabled = true
+          if (leftSpan) leftSpan.textContent = 'Sending…'
+
+          try {
+            const body = buildJsonPayload(form, formType)
+            const res = await fetch(CONTACT_API_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(body)
+            })
+
+            let data = {}
+            try {
+              const text = await res.text()
+              if (text) data = JSON.parse(text)
+            } catch (parseErr) {
+              data = {}
+            }
+
+            if (res.status === 201) {
+              showSuccess(form)
+              return
+            }
+
+            if (res.status === 400 && data.field_errors) {
+              applyApiFieldErrors(form, formType, data.field_errors)
+              return
+            }
+
+            if (res.status === 429) {
+              showGlobalError(
+                form,
+                'Too many submissions. Please wait a few minutes and try again.'
+              )
+              return
+            }
+
+            if (res.status >= 500) {
+              showGlobalError(
+                form,
+                'Something went wrong on our end. You can also reach me at hello@milosdronjak.me'
+              )
+              return
+            }
+
+            showGlobalError(
+              form,
+              'Something went wrong on our end. You can also reach me at hello@milosdronjak.me'
+            )
+          } catch (err) {
+            showGlobalError(form, 'Could not send — check your connection and try again.')
+          } finally {
+            if (!form.querySelector('.contact-form__success')) {
+              if (btn) btn.disabled = false
+              if (leftSpan) leftSpan.textContent = originalLabel
+            }
+          }
+        }
+
+        void runSubmit()
       })
     })
   }

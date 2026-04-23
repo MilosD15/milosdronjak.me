@@ -350,8 +350,8 @@
 
     .philosophy-tabs .pill {
         width: 100%;
-        min-height: 2.5rem;
-        font-size: 13px;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
     }
 
     .philosophy-panel {
