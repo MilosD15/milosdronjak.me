@@ -644,6 +644,7 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    font-weight: 600;
     text-align: left;
     flex-wrap: wrap;
     gap: 0.35rem 1rem;
